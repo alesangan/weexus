@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <header>
+      <div class="header_login">
+        <% if user_signed_in? %>
+          <h2>
+            <%=link_to 'LOGOUT', destroy_user_session_path, :method => :delete %>
+          </h2>
+          <% else %>
+          <h2>
+            <%=link_to 'LOGIN', new_user_session_path, :method => :create %>
+          </h2>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
