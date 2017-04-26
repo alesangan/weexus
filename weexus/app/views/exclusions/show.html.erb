@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @exclusion.word %>
+</p>
+
+<p>
+  <strong>Weighting:</strong>
+  <%= @exclusion.weighting %>
+</p>
+
+<%= link_to 'Edit', edit_exclusion_path(@exclusion) %> |
+<%= link_to 'Back', exclusions_path %>

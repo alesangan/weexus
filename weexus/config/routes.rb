@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :exclusions
+  get 'home/index'
+
   resources :tags
   resources :posts
   devise_for :users
