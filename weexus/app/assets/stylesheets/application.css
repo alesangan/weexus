@@ -14,3 +14,89 @@
  *= require_self
  *= require trix
  */
+
+ body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.firstheader {
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-color: #d3d3d3;
+  border-width: 0.5px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.logo {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.weexus {
+  flex-grow: 7;
+  margin-left: 1%;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 2%;
+  margin-right: 50%;
+  /*color: #709FB0;*/
+
+}
+
+
+.sign {
+  font-size: 14px;
+  margin-right: 1%;
+  margin-top: 2%;
+  /*color: #709FB0;*/
+}
+
+.search {
+  margin-top: 1.7%;
+  flex-grow: 1;
+}
+
+
+.flex {
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-color: #d3d3d3;
+  border-width: 0.5px;
+  font-size: 14px;
+  border-top-style: solid;
+  border-top-color: #e6e6e6;
+
+}
+
+.flexitem {
+  flex-grow: 1;
+  margin-bottom: 2%;
+  margin-right: 5%;
+  margin-bottom: 1.5%;
+  margin-top: 1%;
+  margin-left: 1%;
+  color: #999999;
+  white-space: nowrap;
+}
+
+#showMenu {
+  display: none;
+}
+
+#home {
+  color:  #4d4d4d;
+}
+
+@media only screen and (max-width: 500px) {
+
+    #showMenu {
+      display: block;
+    }
+
+    .flex {
+        display: none;
+        flex-direction: column;
+
+    }
+}
