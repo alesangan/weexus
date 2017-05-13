@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :exclusions
   get 'home/index'
+  get 'posts/review'
 
   resources :tags
   resources :posts

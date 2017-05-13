@@ -24,7 +24,7 @@
           <td><%= link_to 'Show', post %></td>
         <% end %>
         <% if can? :update, Post %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Approve', post_path(post, :post => {:status => 'Done'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
         <% if can? :delete, @post %>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -36,10 +36,4 @@
 
 <br>
 
-<% if can? :create, Post %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
-
-<% if can? :update, Post %>
-  <%= link_to 'Approve Posts', posts_review_path %>
-<% end %>
+<%= link_to 'Back', posts_path %>
