@@ -16,13 +16,13 @@
     <p class="weexus">Weexus</p>
     <div class="header_login">
       <% if user_signed_in? %>
-        <h2>
-          <%=link_to 'LOGOUT', destroy_user_session_path, :method => :delete %>
-        </h2>
+        <p class="logout">
+          <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+        </p>
         <% else %>
-        <h2>
-          <%=link_to 'LOGIN', new_user_session_path, :method => :create %>
-        </h2>
+        <p>
+          <%=link_to 'Login / Sign up', new_user_session_path, :method => :create %>
+        </p>
       <% end %>
     </div>
       <div class="search">
@@ -81,5 +81,15 @@ $(function(){
 <% end %>
     </header>
     <%= yield %>
+
+
+      <div class="footer">
+        <div class="flexitem" id="facebook">Facebook</div>
+        <div class="flexitem">Twitter</div>
+        <div class="flexitem">Instagram</div>
+        <div class="flexitem">Privacy</div>
+        <div class="contact">Contact</div>
+      </div>
+
   </body>
 </html>

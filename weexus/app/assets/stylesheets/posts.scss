@@ -1,3 +1,17 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (max-width: 500px) {
+
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10%;
+  }
+
+  td {
+    white-space: nowrap;
+  }
+
+}
