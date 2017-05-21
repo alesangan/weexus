@@ -1,5 +1,5 @@
-<%= form_for(post) do |f| %>
-  <% if post.errors.any? %>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+
+
 
   <div class="field trix_weexus">
     <%= f.label :content %>
@@ -31,7 +34,15 @@
     <%= f.text_field :user_id %>
   </div> -->
 
+  <div class="taglist">
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
