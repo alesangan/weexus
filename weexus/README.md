@@ -1,5 +1,7 @@
 # README
 
+<!--https://captainvita.gitbooks.io/blog-with-ror/content/chapter4.html-->
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
