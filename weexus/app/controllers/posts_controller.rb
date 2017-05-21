@@ -5,9 +5,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(status: 'Done')
   end
 
+  def review
+    @posts = Post.where(status: 'Submitted')
+  end
+  
   # GET /posts/1
   # GET /posts/1.json
   def show
