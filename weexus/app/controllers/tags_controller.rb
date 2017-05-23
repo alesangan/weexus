@@ -55,13 +55,13 @@ class TagsController < ApplicationController
 
   # DELETE /tags/1
   # DELETE /tags/1.json
-  def destroy
-    @tag.destroy
-    respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  #def destroy  AH REMOVED - CHANGE STATUS SO NOT SHOWN sINSTEAD OF DESTROY. NO IMPACT ON POSTS
+  #  @tag.destroy
+  #  respond_to do |format|
+  #    format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+  #    format.json { head :no_content }
+  #  end
+  #end-->
 
   private
     # Use callbacks to share common setup or constraints between actions.

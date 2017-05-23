@@ -28,9 +28,12 @@
         <% if can? :update, Post %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <% end %>
+
+<!-- ALEXH DONT DESTROY - DO STATUS CHANGE TO SUSPENDED SO TAG CANT BE SEEN     
         <% if can? :delete, @post %>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+-->
       </tr>
     <% end %>
   </tbody>
