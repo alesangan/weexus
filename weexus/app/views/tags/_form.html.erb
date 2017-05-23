@@ -18,8 +18,14 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.text_field :status %>
+    <%= f.radio_button(:status, "Active") %>
+    <%= f.label(:status_active, "Active") %>
+    <%= f.radio_button(:status, "Suspended") %>
+    <%= f.label(:status_active, "Suspended") %>
+        <!--<%= f.text_field :status %>-->
   </div>
+
+
 
 
 <!--ALEXH TYPE NOT USEFUL AT THE MOMENT - 21.05.17
