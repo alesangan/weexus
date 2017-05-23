@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get 'posts/review'
 
   resources :tags
-  resources :posts
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end
   devise_for :users, :path_prefix => 'my'
   resources :users
   root to: 'home#index'
