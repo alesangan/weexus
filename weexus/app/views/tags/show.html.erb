@@ -1,19 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
+  <strong>Tag Name:</strong>
   <%= @tag.name %>
-</p>
+</h1><br />
 
-<p>
-  <strong>Status:</strong>
-  <%= @tag.status %>
-</p>
+<h2>Posts</h2>
+<table>
 
-<p>
-  <strong>Type:</strong>
-  <%= @tag.type %>
-</p>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Tags:</th>
+      <th></th>
+      <th></th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+
+<tbody>
+  <% @tag.posts.each do |post, tags, username| %>
+    <tr>
+      <td><%= link_to post.title, post_path(post) %></td>
+      <td><%= post.user.username %></td>
+              <% post.tags.each do |tag| %>
+                  <td><%= link_to tag.name, tag_path(tag) %></td>
+              <% end %>
+    </tr>
+  <% end %>
+</tbody>
+</table><br />
+
+
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>

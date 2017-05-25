@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  Tags:
+  <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Content:</strong>
   <%= @post.content.html_safe %>
 </p>
