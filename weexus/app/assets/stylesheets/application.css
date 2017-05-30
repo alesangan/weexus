@@ -41,22 +41,23 @@
   cursor: pointer;
   margin-top: 1%;
   margin-bottom: 1%;
-  margin-right: 50%;
+  margin-right: 70%;
   width: 15%;
   height: 10%;
 }
 
 /* sign out button styling */
-/*.logout {
+.logout {
   font-size: 100%;
-  margin-top: 8%;
-  }*/
+  margin-top: 100%;
+  margin-right: -6%;
+  }
 
 /* magnifying glass search button styling */
 .search {
   cursor: pointer;
-  margin-top: 8%;
-  margin-right: 7%;
+  margin-top: 7.5%;
+  margin-left: 2%;
 }
 
 /* flex container for second header e.g. home, edit profile, posts etc */
