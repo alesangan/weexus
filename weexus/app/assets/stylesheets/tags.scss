@@ -1,3 +1,78 @@
-// Place all the styles related to the Tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//http://thecodeplayer.com/walkthrough/make-a-simple-cloud-in-css3
+
+body {
+	background: #fff;
+}
+
+#tag_cloud {
+  width: 450px;
+  height: 220px;
+
+  background: #f2f9fe;
+	background: linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
+	background: -webkit-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
+	background: -moz-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
+	background: -ms-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
+	background: -o-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
+
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+
+  position: relative;
+  margin: 120px auto 20px;
+
+  text-align: bottom;
+  word-wrap: normal;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .a { font-size: 0.8em; color: pink;}
+  .b { font-size: 1.2em; color: blue;}
+  .c { font-size: 1.8em; color: green}
+  .d { font-size: 2.0em; color: orange}
+  .e { font-size: 2.5em; color: magenta}
+  .f { font-size: 3.0em; color: lime}
+}
+
+#tag_cloud:after, #tag_cloud:before {
+  content: '';
+	position: absolute;
+	background: #f2f9fe;
+	z-index: -1
+}
+
+
+#tag_cloud:after {
+	width: 280px; height: 170px;
+	top: -50px; left: 50px;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  }
+
+#tag_cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; left: 50px;
+
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+
+.shadow {
+	width: 350px;
+	position: absolute; bottom: -10px;
+	background: #000;
+	z-index: -1;
+
+	box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+
+  border-radius: 50%;
+  	-moz-border-radius: 50%;
+  	-webkit-border-radius: 50%;
+  }
