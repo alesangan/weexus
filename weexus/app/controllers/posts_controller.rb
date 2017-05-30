@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @tag_options = Tag.all.map{ |t| [t.name]}  #AH NEW
     @post = Post.new
   end
 
@@ -33,7 +34,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.status = 'Submitted'
+    puts(params[:tags])
+    @post.split_tag_list(params[:tags])
     @post.user = current_user
 
     respond_to do |format|
@@ -82,6 +84,7 @@ class PostsController < ApplicationController
     redirect_to :back
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -90,6 +93,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :status, :user_id, :tag_list)
+      params.require(:post).permit(:title, :content, :status, :user_id)
     end
 end

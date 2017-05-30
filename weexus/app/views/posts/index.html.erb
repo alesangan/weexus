@@ -19,7 +19,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content.html_safe %></td>
-        <td><%= post.tag_list %></td>
+        <td><%= post.get_tag_list %></td>
         <td><%= post.status %></td>
         <td><%= post.user.username %></td>
         <% if can? :read, Post %>
