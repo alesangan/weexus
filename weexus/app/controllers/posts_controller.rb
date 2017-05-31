@@ -21,13 +21,13 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @tag_options = Tag.all.map{ |t| [t.name]}  #AH NEW
+    @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
-    @tag_options = Tag.all.map{ |t| [t.name]}
+    @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.find(params[:id])
   end
 
@@ -76,6 +76,7 @@ class PostsController < ApplicationController
     #@post.split_tag_list(params[:tags])
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
+
 
   def upvote
     @post.liked_by current_user
