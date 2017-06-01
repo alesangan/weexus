@@ -27,7 +27,7 @@
           <td><%= link_to 'Approve', post_path(post, :post => {:status => 'Done'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
         <% if can? :delete, @post %>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Reject', post_path(post, :post => {:status => 'Rejected'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
       </tr>
     <% end %>
