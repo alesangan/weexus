@@ -18,13 +18,13 @@
   </div>
 
 
-
   <div class="field trix_weexus">
     <%= f.label :content %>
     <%= f.trix_editor :content %>
   </div>
 
-  <!-- <div class="field">
+  <!-- AH DELETED THE USER & STATUS FIELDS - NOT REQUIRED for WEEXUS
+    <div class="field">
     <%= f.label :status %>
     <%= f.text_field :status %>
   </div> -->
@@ -34,11 +34,24 @@
     <%= f.text_field :user_id %>
   </div> -->
 
-  <div class="taglist">
-    <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
-  </div>
 
+  <div class="taglist">
+   <%= f.label :get_tag_list, class: 'tag list' %><br />
+<!--    <%= f.text_field :get_tag_list %>-->
+    <select name="tags[]" id="tag_a">
+      <option value="">Select Tag</option>
+      <%= options_for_select(@tag_options) %>
+    </select>
+    <select name="tags[]" id="tag_b">
+      <option value="">Select Tag</option>
+      <%= options_for_select(@tag_options) %>
+    </select>
+    <select name="tags[]" id="tag_c">
+      <option value="">Select Tag</option>
+      <%= options_for_select(@tag_options) %>
+    </select>
+
+  </div>
 
 
   <div class="actions">
