@@ -1,4 +1,24 @@
+<script type="text/javascript">
+  var word_array =<%= raw @tag_cloud.to_json %> ;
+
+  console.log(word_array);
+  $(function() {
+    // When DOM is ready, select the container element and call
+    // the jQCloud method, passing the array of words as the first argument.
+    $("#example").jQCloud(word_array);
+  });
+</script>
+
+<div id="example" style="width: 550px; height: 350px;"></div>
+
+
+
+
+
+
 <p id="notice"><%= notice %></p>
+
+
 
 <p>
   <strong>Title:</strong>
@@ -8,6 +28,35 @@
 <p>
   <strong>Content:</strong>
   <%= @post.content.html_safe %>
+  <%  @get_exclusion_list = Exclusion.all.map{|m| [m.word]}%>
+  <%= @get_exclusion_list%>
+  <% string =  strip_tags(@post.content)
+     exclusion_list=["there","started"]
+     words = string.downcase.gsub /\W+/, ' '
+     counts = Hash.new 0
+     words.split(' ').each do |word|
+        if word.length > 3
+           counts[word] += 1
+       end
+    end
+  %>
+  <%=exclusion_list%>
+  <%
+   counts = counts.sort_by {|_key, value| value}.to_h
+  #puts counts
+   hashnew = counts.reject { |k, _| exclusion_list.include? k }%>
+
+  <% @wordsnew=hashnew.to_a%>
+
+
+  >>>
+  <%
+
+  @words  = [ ['test', 50], ['me', 40], ['childbirth', 30], ['parenting', 20]]
+  cloud = MagicCloud::Cloud.new(@words, rotate: :free, scale: :log)
+  cloud.draw(200,200)
+  %>
+  <<<
 </p>
 
 <p>

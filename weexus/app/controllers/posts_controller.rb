@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -11,10 +13,19 @@ class PostsController < ApplicationController
   def review
     @posts = Post.where(status: 'Submitted')
   end
-  
+
   # GET /posts/1
   # GET /posts/1.json
   def show
+
+    @tag_cloud = [
+       { text: "test", weight: 15},
+       { text: "Ipsum", weight: 9, link: "http://jquery.com/"},
+       { text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
+       { text: "Sit", weight: 7},
+       {text: "Amet", weight: 5}
+    ]
+    
   end
 
   # GET /posts/new
@@ -25,6 +36,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
+
 
   # POST /posts
   # POST /posts.json
