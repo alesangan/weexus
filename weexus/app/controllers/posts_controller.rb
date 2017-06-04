@@ -21,11 +21,13 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+    @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.find(params[:id])
   end
 
@@ -34,6 +36,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.status = 'Submitted'
+    @post.split_tag_list(params[:tags])
     @post.user = current_user
 
     respond_to do |format|
@@ -52,6 +55,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      if params[:tags] != nil
+        @post.split_tag_list(params[:tags])
+      end
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
@@ -65,12 +71,12 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @post.tags.clear
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    #@post.split_tag_list(params[:tags])
+    redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
+
 
   def upvote
     @post.liked_by current_user
@@ -82,6 +88,7 @@ class PostsController < ApplicationController
     redirect_to :back
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -90,6 +97,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :status, :user_id, :tag_list)
+      params.require(:post).permit(:title, :content, :status, :user_id)
     end
 end

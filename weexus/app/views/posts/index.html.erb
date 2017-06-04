@@ -18,10 +18,11 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content.html_safe %></td>
-        <td><%= post.tag_list %></td>
+        <td><%= post.content.truncate(100, separator: ' ').html_safe %></td>
+        <td><%= post.get_tag_list %></td>
         <td><%= post.status %></td>
         <td><%= post.user.username %></td>
+        <td><%= post.created_at.strftime("Experience shared on %A %d %B %Y") %></td>
         <% if can? :read, Post %>
           <td><%= link_to 'Show', post %></td>
         <% end %>
