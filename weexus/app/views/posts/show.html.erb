@@ -1,48 +1,19 @@
-<% string =  strip_tags(@post.content)
-   exclusion_list=["there","started"]
-   words = string.downcase.gsub /\W+/, ' '
-   counts = Hash.new 0
-   words.split(' ').each do |word|
-      if word.length > 3
-         counts[word] += 1
-     end
-  end
- counts = counts.sort_by {|_key, value| value}.to_h
-
- hashnew = counts.reject { |k, _| exclusion_list.include? k }
- arrnew = Array.new
- hashnew.each do|key,weight|
-
-   hashp=Hash.new
-   hashp['text'] = key
-   hashp['weight']= weight
-   arrnew.push(hashp)
- end
-%>
-<%=arrnew%><br><br>
-
 
 <script type="text/javascript">
   var word_array =<%= raw @tag_cloud.to_json %> ;
+
   console.log(word_array);
   $(function() {
     // When DOM is ready, select the container element and call
     // the jQCloud method, passing the array of words as the first argument.
-    $("#example").jQCloud(word_array);
+    $("#wordcloud").jQCloud(word_array);
   });
 </script>
 
-<div id="example" style="width: 550px; height: 350px;"></div>
-
-
-
-
+<div id="wordcloud" style="width: 450px; height: 250px;"></div>
 
 
 <p id="notice"><%= notice %></p>
-
-
-
 <p>
   <strong>Title:</strong>
   <%= @post.title %>

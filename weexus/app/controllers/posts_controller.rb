@@ -17,14 +17,30 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @get_exclusion_list = Exclusion.all.map{|m| [m.word]}
+     string =  ActionView::Base.full_sanitizer.sanitize(@post.content)
 
-    @tag_cloud = [
-       { text: "test", weight: 15},
-       { text: "Ipsum", weight: 9},
-       { text: "Dolor", weight: 6},
-       { text: "Sit", weight: 7},
-       {text: "Amet", weight: 5}
-    ]
+       exclusion_list=@get_exclusion_list
+       words = string.downcase.gsub /\W+/, ' '
+       counts = Hash.new 0
+       words.split(' ').each do |word|
+          if word.length > 3
+             counts[word] += 1
+         end
+      end
+      counts = counts.sort_by {|_key, value| value}.to_h
+
+      hashnew = counts.reject { |k, _| exclusion_list.include? k }
+      arrnew = Array.new
+      hashnew.each do|key,weight|
+
+        hashp=Hash.new
+        hashp['text'] = key
+        hashp['weight']= weight
+        arrnew.push(hashp)
+      end
+
+    @tag_cloud = arrnew
 
   end
 
