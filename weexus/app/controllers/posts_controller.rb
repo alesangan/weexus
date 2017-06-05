@@ -20,12 +20,12 @@ class PostsController < ApplicationController
 
     @tag_cloud = [
        { text: "test", weight: 15},
-       { text: "Ipsum", weight: 9, link: "http://jquery.com/"},
-       { text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
+       { text: "Ipsum", weight: 9},
+       { text: "Dolor", weight: 6},
        { text: "Sit", weight: 7},
        {text: "Amet", weight: 5}
     ]
-    
+
   end
 
   # GET /posts/new
