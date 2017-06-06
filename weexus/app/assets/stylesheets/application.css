@@ -69,6 +69,8 @@
   font-size: 14px;
   border-top-style: solid;
   border-top-color: #e6e6e6;
+  margin-left: 2%;
+  margin-right: 3%;
 
 }
 
@@ -82,6 +84,8 @@
   margin-left: 1%;
   color: #999999;
   white-space: nowrap;
+
+
 }
 
 /* sets burger menu to not appear in desktop */
