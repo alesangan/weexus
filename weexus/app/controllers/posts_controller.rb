@@ -17,33 +17,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @get_exclusion_list = Exclusion.all.map{|m| [m.word]}
-    string =  ActionView::Base.full_sanitizer.sanitize(@post.content)
-    exclusion_list=@get_exclusion_list.flatten
-    words = string.downcase.gsub /\W+/, ' '
-    counts = Hash.new 0
-    words.split(' ').each do |word|
-      if word.length > 3
-        counts[word] += 1
-      end
-    end
-    counts = counts.sort_by {|_key, value| value}.reverse.to_h
-    hashnew = counts.reject { |k, _| exclusion_list.include? k }
-    #  raise hashnew.inspect
-    arrnew = Array.new
-    counter = 25
-    hashnew.each do|key,weight|
-      hashp=Hash.new
-      hashp['text'] = key
-      hashp['weight']= weight
-      arrnew.push(hashp)
-      counter = counter - 1
-      if counter==0
-        break
-      end
-    end
+      exclusion_list = Exclusion.all.map{|m| [m.word]}
+      string =  @post.content
 
-    @tag_cloud = arrnew
+      jqtagcloud = Jqtagcloud.new
+      @tag_cloud = jqtagcloud.createCloud(string, exclusion_list, 50)
 
   end
 
