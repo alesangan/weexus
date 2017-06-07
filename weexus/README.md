@@ -24,3 +24,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+https://tutorialzine.com/2017/05/5-beautiful-image-effects-with-css
