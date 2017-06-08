@@ -17,6 +17,12 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    exclusion_list = Exclusion.all.map{|m| [m.word]}
+    string =  @post.content
+
+    jqtagcloud = Jqtagcloud.new
+    @tag_cloud = jqtagcloud.createCloud(string, exclusion_list, 45)
+
   end
 
   # GET /posts/new
@@ -59,6 +65,9 @@ class PostsController < ApplicationController
         @post.split_tag_list(params[:tags])
       end
       if @post.update(post_params)
+        if post_params[:status]=="Rejected"
+          PostMailer.post_rejected(@post.user).deliver
+        end
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
