@@ -127,6 +127,10 @@
   color: #999999;
 }
 
+.submissionhelp {
+  font-size: 100%;
+}
+
 /* styling for facebook button only */
 #facebook {
   margin-left: 1%;
