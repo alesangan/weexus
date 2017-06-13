@@ -4,8 +4,21 @@
 		box-sizing: border-box;
 }
 
+
 html{
 		overflow-x: hidden;
+		min-height: 100%;
+		box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html{
+	min-height: 100%
 }
 
 
@@ -14,8 +27,9 @@ html{
 /*-------------------*/
 
 .polyscape-background {
-		width: 100vw;
-		height: 100vh;
+		margin: 64px auto;
+		width: 90vw;
+		height: 90vh;
 		overflow: hidden;
 		position: relative;
 		display: flex;
@@ -24,6 +38,7 @@ html{
 		background-attachment: fixed;
 		background-position: center;
 		background-size: cover;
+		text-align: center;
 }
 
 .polyscape-background > div {
@@ -35,53 +50,85 @@ html{
 /*		Polyscape 1	 	 */
 /*-------------------*/
 
-#polyscape-1 {
-		background-image: url("polyscape-1/mountain.jpg") ;
-		background-color: rgba(190, 30, 41, 0.4);
+/*#polyscape-1 {
+		/*background-image: url("polyscape-1/clouds2.jpg");*/
+		background-color: rgba(255, 255, 240, 0.4);
 }
 
 #polyscape-1 .circle{
 		width: 400px;
 		height: 400px;
 		border-radius: 50%;
-		background: url("polyscape-1/mountain.jpg") fixed center;
+		background: url("polyscape-1/clouds2.jpg") fixed center;
 		background-size: cover;
-		filter: hue-rotate(60deg) contrast(200%);
+		filter: brightness(150%) contrast(100%);
+		/*filter: hue-rotate(60deg) contrast(100%);*/
 		/*background-color: rgba(181, 41, 41, 0.4);*/
 }
 
-#polyscape-1 .square-rotated {
+/*#polyscape-1 .circle:after{
+		display: block;
+		padding-bottom: 100%;
+		width: 100%;
+		height: 0;
+		content: "";
+}
+
+	#polyscape-1 .circle__inner {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+	}
+
+	#polyscape-1 .circle__wrapper {
+			display: table;
+			width: 100%;
+			height: 100%;
+	}
+
+	#polyscape-1 .circle__content {
+			display: table-cell;
+			padding: 1em ;
+			vertical-align: middle;
+	}
+
+
+/*#polyscape-1 .square-rotated {
 		width: 480px;
 		height: 480px;
 		transform: rotate(45deg);
 		filter: invert(25%);
-		border: 200px solid transparent;
-		border-image: url("polyscape-1/mountain.jpg") 200 stretch;
-		background-color: rgba(170, 41, 21, 0.4);
-}
+		border: 100px solid transparent;
+		border-image: url("polyscape-1/clouds2.jpg") 200 stretch;
+		background-color: rgba(255, 255, 240, 0.4);
+}*/
 
-#polyscape-1 .square {
-		width: 480px;
-		height: 480px;
-		border: 10px solid #fff;
-		background: url("polyscape-1/mountain.jpg") fixed center;
+/*#polyscape-1 .square {
+		width: 500px;
+		height: 500px;
+		border: 10px solid #ddd;
+		border-radius: 50%;
+		background: url("polyscape-1/clouds2.jpg") fixed center;
 		background-size: cover;
-		background-color: rgba(170, 41, 21, 0.4);
-}
+		background-color: rgba(255, 255, 240, 0.4);
+}*/
 
 
 /*-------------------*/
 /*		Polyscape 2	 	 */
 /*-------------------*/
 
-#polyscape-2 {
-		background-image: url("polyscape-2/mist.jpg") ;
+/*#polyscape-2 {
+		background-image: url("polyscape-2/cloudsflat.jpg") ;
 }
 
 #polyscape-2 .diamond {
 		width: 420px;
 		height: 560px;
-		background: url("polyscape-2/city1.jpg") center;
+		background: url("polyscape-2/milkyway.jpg") center;
 		background-size: cover;
 		clip-path: polygon(50% 0, 0 65%,  50% 100%, 100% 65%);
 }
@@ -94,25 +141,25 @@ html{
 #polyscape-2 .diamond:last-child {
 		transform: translateX(100px);
 		filter: opacity(70%) brightness(1.4);;
-}
+}*/
 
 
 /*-------------------*/
 /*		Polyscape 3 	 */
 /*-------------------*/
 
-#polyscape-3 {
-		background-image: url("polyscape-3/space.jpg") ;
+/*#polyscape-3 {
+		background-image: url("polyscape-3/stars.jpg") ;
 }
 
 #polyscape-3 .triangle{
-		width: 400px;
-		height: 360px;
+		width: 480px;
+		height: 480px;
 		background: url("polyscape-3/mountain.jpg");
 		background-position: 50% 70%;
 		filter: hue-rotate(60deg) contrast(200%);
-		clip-path: polygon(50% 0, 0 100%, 100% 100%);
-}
+		clip-path: polygon(0 20%, 300% 20%, 300% 80%, 0 80%);
+}*/
 
 
 /*-------------------*/
@@ -120,20 +167,55 @@ html{
 /*-------------------*/
 
 #polyscape-4 {
-		background-image: url("polyscape-4/lake.jpg") ;
-		filter: grayscale(25%);
+		background-image: url("polyscape-4/clouds2.jpg");
+		/*filter: grayscale(25%);*/
 }
 
 #polyscape-4 .circle{
-		width: 250px;
-		height: 250px;
+		position:relative;
+		display: block;
+		width: 600px;
+		height: 600px;
+		margin: 2em 0em;
 		border-radius: 50%;
-		background: url("polyscape-4/clouds.jpg");
+		background: url("polyscape-4/stars.jpg") fixed center;
 		background-size: cover;
-		filter: hue-rotate(120deg) contrast(140%);
+			/*filter: hue-rotate(120deg) contrast(140%);*/
+		filter: hue-rotate(5deg) contrast(150%);
+		text-align: center;
 }
 
-#polyscape-4 .square-rotated {
+#polyscape-4 .circle:after{
+		display: block;
+		padding-bottom: 100%;
+		width: 100%;
+		height: 0;
+		content: "";
+}
+
+	#polyscape-4 .circle__inner {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+	}
+
+	#polyscape-4 .circle__wrapper {
+			display: table;
+			width: 100%;
+			height: 100%;
+	}
+
+	#polyscape-4 .circle__content {
+			display: table-cell;
+			padding: 1em ;
+			vertical-align: middle;
+	}
+
+
+/*#polyscape-4 .square-rotated {
 		width: 460px;
 		height: 460px;
 		transform: rotate(45deg);
@@ -141,9 +223,9 @@ html{
 		border: 25px solid transparent;
 		border-image: url("polyscape-4/clouds.jpg") 25 stretch;
 		filter: hue-rotate(120deg) contrast(140%);
-}
+}*/
 
-#polyscape-4 .square-rotated-small {
+/*#polyscape-4 .square-rotated-small {
 		width: 360px;
 		height: 360px;
 		transform: rotate(45deg);
@@ -151,15 +233,16 @@ html{
 		border: 25px solid transparent;
 		border-image: url("polyscape-4/clouds.jpg") 25 stretch;
 		filter: hue-rotate(120deg) contrast(140%);
-}
+}*/
 
 #polyscape-4 .square {
-		width: 460px;
-		height: 460px;
+		width: 600px;
+		height: 600px;
 		background: transparent;
 		border: 2px solid transparent;
 		border-image: url("polyscape-4/clouds.jpg") 2 stretch;
-		filter: hue-rotate(50deg) contrast(140%);
+		/*filter: hue-rotate(160deg) contrast(140%);
+		background-color: rgba(135, 206, 260, 0.4);*/
 }
 
 
@@ -168,15 +251,16 @@ html{
 /*-------------------*/
 
 #polyscape-5 {
-		background-image: url("polyscape-5/mountain.jpg") ;
+		background-image: url("polyscape-5/bench.jpg") ;
 }
 
+/*AH Changed this from triangle to square*/
 #polyscape-5 .triangle{
 		clip-path: polygon(50% 0, 0 100%, 100% 100%);
-		background-color: rgba(181, 41, 41, 0.4);
+		background-color: rgba(135, 206, 260, 0.4);
 }
 
-#polyscape-5 .triangle:first-child{
+/*#polyscape-5 .triangle:first-child{
 		width: 600px;
 		height: 525px;
 		transform: rotate(180deg) translateX(100px);
@@ -186,4 +270,4 @@ html{
 		width: 320px;
 		height: 280px;
 		transform: translateX(150px) translateY(50px);
-}
+}*/

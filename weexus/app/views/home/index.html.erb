@@ -1,5 +1,4 @@
 
-
 <div>
 <!--<nav class = "dark">
       <li class>
@@ -33,40 +32,65 @@
       </li>
     </nav>-->
 
-    <div id="polyscape-1" class="polyscape-background">
+<!--    <div id="polyscape-2" class="polyscape-background">
+      <div class="diamond"></div>
+      <div class="diamond"></div>
+    </div> -->
+
+<!--    <div id="polyscape-3" class="polyscape-background">
+      <div class="triangle"></div>
+    </div> -->
+
+   <div id="polyscape-4" class="polyscape-background">
       <div class="square-rotated"></div>
+      <div class="square-rotated-small"></div>
       <div class="square"></div>
       <div class="circle">
 
-        <div id="tag_cloud"><span class='shadow'></span>
+        <div class="circle__inner">
+        <div class="circle__wrapper">
+
+        <div class="circle__content">
+        <div id="tag_cloud"><!--<span class='shadow'></span>-->
           <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag), class: css_class %>
           <% end %>
+        </div>
+      </div>
+
+        </div>
         </div>
 
       </div>
     </div>
 
-    <div id="polyscape-2" class="polyscape-background">
-      <div class="diamond"></div>
-      <div class="diamond"></div>
-    </div>
 
-    <div id="polyscape-3" class="polyscape-background">
-      <div class="triangle"></div>
-    </div>
-
-    <div id="polyscape-4" class="polyscape-background">
+<!--    <div id="polyscape-1" class="polyscape-background">
       <div class="square-rotated"></div>
-      <div class="square-rotated-small"></div>
       <div class="square"></div>
-      <div class="circle"></div>
+      <div class="circle">
+
+        <div class="circle__inner">
+        <div class="circle__wrapper">
+
+        <div id="tag_cloud"><!--<span class='shadow'></span>-->
+  <!--        <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag), class: css_class %>
+          <% end %>
+        </div>
+
+      </div>
+      </div>
+
+      </div>
+    </div>
+  -->
+
+   <div id="polyscape-5" class="polyscape-background">
+      <div class="triangle"></div>
+      <div class="triangle"></div>
     </div>
 
-    <div id="polyscape-5" class="polyscape-background">
-      <div class="triangle"></div>
-      <div class="triangle"></div>
-    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
