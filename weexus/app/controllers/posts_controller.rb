@@ -2,15 +2,20 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
   include PostsHelper
+  helper_method :sort_column , :sort_direction
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(status: 'Done')
+    @posts = Post.where(status: 'Done').order(sort_column + " " + sort_direction)
   end
 
   def review
     @posts = Post.where(status: 'Submitted')
+  end
+
+  def rejected
+    @posts = Post.where(status: 'Rejected')
   end
 
   # GET /posts/1
@@ -108,4 +113,12 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content, :status, :user_id)
     end
+end
+
+def sort_column
+  %w[title created_at cached_votes_total].include?(params[:sort]) ? params[:sort] : "title"
+end
+
+def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 end

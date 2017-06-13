@@ -1,28 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>Approved Posts</h1>
+
+<% if can? :create, Post %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>
+&nbsp;&nbsp;
+<% if can? :update, Post %>
+  <%= link_to 'Pending Posts', posts_review_path %>&nbsp;&nbsp;
+  <%= link_to 'Rejected Posts', posts_rejected_path %>
+<% end %>
+<br><br><br><br>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th><%= sortable "title","Title"%></th>
       <th>Content</th>
       <th>Tags</th>
       <th>Status</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th><%= sortable "created_at","Shared on"%></th>
+      <th colspan="1"></th>
+      <th><%= sortable "cached_votes_total", "Votes"%></th>
     </tr>
+
   </thead>
 
   <tbody>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content.truncate(100, separator: ' ').html_safe %></td>
+        <td><%= post.content.truncate(50, separator: ' ').html_safe %></td>
         <td><%= post.get_tag_list %></td>
         <td><%= post.status %></td>
         <td><%= post.user.username %></td>
-        <td><%= post.created_at.strftime("Experience shared on %A %d %B %Y") %></td>
+        <td><%= post.created_at.strftime("%d %B %Y") %></td>
+
         <% if can? :read, Post %>
           <td><%= link_to 'Show', post %></td>
         <% end %>
@@ -53,11 +67,3 @@
 </table>
 
 <br>
-
-<% if can? :create, Post %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
-
-<% if can? :update, Post %>
-  <%= link_to 'Approve Posts', posts_review_path %>
-<% end %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pending Posts</h1>
+<h1>Rejected Posts</h1>
 
 <table>
   <thead>
@@ -28,9 +28,7 @@
         <% if can? :update, Post %>
           <td><%= link_to 'Approve', post_path(post, :post => {:status => 'Done'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
-        <% if can? :delete, @post %>
-          <td><%= link_to 'Reject', post_path(post, :post => {:status => 'Rejected'}), :method => :patch, :confirm => 'Are you sure?' %></td>
-        <% end %>
+
       </tr>
     <% end %>
   </tbody>
