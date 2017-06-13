@@ -15,6 +15,10 @@
   </thead>
 
   <tbody>
+    <% if !@posts.present? %>
+      <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+    <% end %>
+
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>

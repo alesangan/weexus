@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   acts_as_votable
   has_many :taggings
   has_many :tags, through: :taggings
+  validates :content, presence: true, allow_blank: false
+
 
   def get_tag_list
     self.tags.collect do |tag|
@@ -32,6 +34,11 @@ class Post < ApplicationRecord
 
   def self.tag_counts
     Tag.select('tags.*, count(taggings.tag_id) as count').joins(:taggings).group('taggings.tag_id')
+  end
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+    where("content LIKE ?", "%#{search}%")
   end
 
 
