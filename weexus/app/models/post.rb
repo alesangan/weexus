@@ -9,8 +9,15 @@ class Post < ApplicationRecord
   def get_tag_list
     self.tags.collect do |tag|
       tag.name
-    end.join(", ")
-  end
+    end.reject(&:blank?).join(", ")
+end
+
+  #def get_tag_list
+  #  self.tags.collect do |tag|
+  #    tag.name
+  #  end.join(", ")
+#  end
+
 
 
   def split_tag_list(tags_string)

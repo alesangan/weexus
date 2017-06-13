@@ -1,49 +1,41 @@
 //http://thecodeplayer.com/walkthrough/make-a-simple-cloud-in-css3
 
 body {
-	background: #fff;
+/*background: #fff;*/
 }
 
 #tag_cloud {
-  width: 450px;
-  height: 220px;
+  display: table-cell;
+  padding: 1em, 1em;
+  vertical-align: middle;
+  text-decoration: none;
 
-  background: #f2f9fe;
-	background: linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
-	background: -webkit-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
-	background: -moz-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
-	background: -ms-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
-	background: -o-linear-gradient(top, #f2f9fe 5%, d6f0fd 100%);
-
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-
-  position: relative;
-  margin: 120px auto 20px;
-
-  text-align: bottom;
-  word-wrap: normal;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  .a { font-size: 0.8em; color: pink;}
-  .b { font-size: 1.2em; color: blue;}
-  .c { font-size: 1.8em; color: green}
-  .d { font-size: 2.0em; color: orange}
-  .e { font-size: 2.5em; color: magenta}
-  .f { font-size: 3.0em; color: lime}
+  .a { font-size: 1.8em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}
+  .b { font-size: 2.2em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}
+  .c { font-size: 2.8em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}
+  .d { font-size: 3.0em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}
+  .e { font-size: 3.5em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}
+  .f { font-size: 4.0em; color: white; line-height: 2.0; text-decoration: none; text-shadow: -0.5px 0.5px 1px #ffc, 0.5px -0.5px 1px #fff;}
 }
 
+@media (min-width: 280px) {#tag_cloud
+  {font-size: 0.5em;}
+}
+
+@media (min-width: 768px) {#tag_cloud
+  {font-size: 1em;}
+}
+
+/*
 #tag_cloud:after, #tag_cloud:before {
   content: '';
 	position: absolute;
 	background: #f2f9fe;
 	z-index: -1
 }
+*/
 
-
+/*
 #tag_cloud:after {
 	width: 280px; height: 170px;
 	top: -50px; left: 50px;
@@ -61,7 +53,9 @@ body {
 	-webkit-border-radius: 200px;
 	-moz-border-radius: 200px;
 }
+*/
 
+/*
 .shadow {
 	width: 350px;
 	position: absolute; bottom: -10px;
@@ -76,3 +70,4 @@ body {
   	-moz-border-radius: 50%;
   	-webkit-border-radius: 50%;
   }
+*/

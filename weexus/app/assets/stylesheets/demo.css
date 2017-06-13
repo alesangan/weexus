@@ -1,0 +1,113 @@
+/*-------------------*/
+/*		Header  		 	 */
+/*-------------------*/
+
+/*header {
+		position: fixed;
+		top: 40px;
+		left: 40px;
+		z-index: 10;
+		padding: 25px 60px 25px 40px;
+		color: #fff;
+		font-family: sans-serif;
+		background-color: #1da7da;
+}
+
+header.hidden {
+		display: none;
+}
+
+header a {
+		display: block;
+		text-decoration: none;
+		color: #fff;
+		margin-top: 10px;
+}
+
+header button {
+		outline: none;
+		border: none;
+		background-color: transparent;
+		height: 18px;
+		width: 18px;
+		color: #1da7da;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+}
+
+header button:after,
+header button:before {
+		content: '';
+		position: absolute;
+		background-color: #fff;
+		top: 3px;
+		left: 8px;
+		width: 2px;
+		height: 12px;
+		transform: rotate(45deg);
+}
+
+header button:before {
+		transform: rotate(-45deg);
+}
+•/
+
+/*-------------------*/
+/*		Navigation	 	 */
+/*-------------------*/
+
+nav {
+		position: fixed;
+		left: 40px;
+		top: 0;
+		height: 100%;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 10;
+}
+
+nav li {
+		padding: 10px 0;
+}
+
+nav li a {
+		position: relative;
+		display: block;
+}
+
+nav li a:after {
+		content: "";
+		display: block;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		border: 2px solid #FFF;
+		transition: 0.2s;
+}
+
+nav li.active a:after {
+  	background: #FFF;
+}
+
+nav.dark li a:after {
+		border: 2px solid #444;
+}
+
+nav.dark li.active a:after {
+  	background: #444;
+}
+
+
+/* -- Demo ads -- */
+
+#bsaHolder {
+    margin-top: 25px;
+}
+
+@media (max-width: 1200px) {
+    #bsaHolder{ display:none;}
+}
