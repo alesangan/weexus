@@ -2,15 +2,15 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
   include PostsHelper
+  helper_method :sort_column , :sort_direction
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
     if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
+      @posts = Post.where(status: 'Done').search(params[:search]).order("created_at DESC").order(sort_column + " " + sort_direction)
     else
-      @posts = Post.all.order('created_at DESC')
+      @posts = Post.where(status: 'Done').order(sort_column + " " + sort_direction)
     end
   end
 
@@ -18,10 +18,20 @@ class PostsController < ApplicationController
     @posts = Post.where(status: 'Submitted')
   end
 
+  def rejected
+    @posts = Post.where(status: 'Rejected')
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    exclusion_list = Exclusion.all.map{|m| [m.word]}
+    string =  @post.content
+
+    jqtagcloud = Jqtagcloud.new
+    @tag_cloud = jqtagcloud.createCloud(string, exclusion_list, 45)
+
   end
 
   # GET /posts/new
@@ -64,6 +74,9 @@ class PostsController < ApplicationController
         @post.split_tag_list(params[:tags])
       end
       if @post.update(post_params)
+        if post_params[:status]=="Rejected"
+          PostMailer.post_rejected(@post.user).deliver
+        end
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -104,4 +117,12 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content, :status, :user_id)
     end
+end
+
+def sort_column
+  %w[title created_at cached_votes_total].include?(params[:sort]) ? params[:sort] : "title"
+end
+
+def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 end

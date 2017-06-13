@@ -14,13 +14,14 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => 'required'%>
   </div>
 
 
   <div class="field trix_weexus">
-    <%= f.label :content %>
-    <%= f.trix_editor :content %>
+    <%= f.label :content, :required => 'required' %>
+    <%= f.trix_editor :content, :required => 'required'%>
+
   </div>
 
   <!-- AH DELETED THE USER & STATUS FIELDS - NOT REQUIRED for WEEXUS

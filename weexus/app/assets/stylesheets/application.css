@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require trix
+ *= require jqcloud
  */
 
  /*div { border: 1px solid purple; }*/
@@ -20,11 +21,13 @@
 /* styles all text in a font that suits what the user is used to depending on their machine */
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
 }
+
 
 /* pushes footer down to bottom of page */
 #main-content {
-  min-height: 800px;
+  min-height: 200px;
 }
 
 /* logo, sign out & search bar styling*/
@@ -47,10 +50,9 @@
 }
 
 /* sign out button styling */
-.logout {
+.header_login {
   font-size: 100%;
-  margin-top: 100%;
-  margin-right: -6%;
+  margin-top: 5%;
   }
 
 /* magnifying glass search button styling */
@@ -69,6 +71,8 @@
   font-size: 14px;
   border-top-style: solid;
   border-top-color: #e6e6e6;
+  margin-left: 2%;
+  margin-right: 3%;
 
 }
 
@@ -82,10 +86,12 @@
   margin-left: 1%;
   color: #999999;
   white-space: nowrap;
+
+
 }
 
 /* sets burger menu to not appear in desktop */
-#burger {
+.burger {
   display: none;
 }
 
@@ -123,9 +129,17 @@
   color: #999999;
 }
 
+.submissionhelp {
+  font-size: 100%;
+}
+
 /* styling for facebook button only */
 #facebook {
   margin-left: 1%;
+}
+
+.searchtab {
+  display: none;
 }
 
 
@@ -133,12 +147,12 @@
 
   /* pushes footer down to bottom of page */
   #main-content {
-    min-height: 500px;
+    min-height: 450px;
   }
 
 /*sets burger menu to appear in mobile*/
-  #burger {
-    display: block;
+  .burger {
+    display: inline;
     cursor: pointer;
   }
 
@@ -147,39 +161,68 @@
       display: none;
   }
 
-  /*.header {
+  .header {
     display: flex;
     flex-direction: column;
-  }*/
+  }
 
 /* mobile logo, sign out & search bar styling*/
   .firstheader {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    margin: 0px;
+    justify-content: space-around;
+    align-items: center;
   }
 
  /* mobile logo styling */
   .logo {
-      width: 40%;
-      height: 40%;
+      width: 100px;
+      margin: 0;
+      margin-right: 20%;
+    /*  margin-left: -15%; */
+
+  }
+
+  .header_login {
+    margin-top: 0;
+    margin-right: -10%;
   }
 
 /* mobile magnifying glass search button styling */
   .search {
-    display: block;
+    display: none;
     cursor: pointer;
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+
+  .footer {
+    display: flex;
+    border-top-style: solid;
+    border-top-color: #d3d3d3;
+    border-width: 0.5px;
+    margin-top: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
 /* mobile styling for buttons in footer OTHER than contact */
   .flexitem {
-    font-size: 60%;
-    color: silver;
+    font-size: 100%;
+    color: 999999;
   }
 
 /* mobile styling for solely contact button in footer, separate to other buttons in footer */
   .contact {
-    font-size: 60%;
-    color: silver;
+    font-size: 100%;
+    color: 999999;
+    margin-top: 3%;
+    margin-left: 2%;
+  }
+
+  .searchtab {
+    display: inline;
   }
 
 }
