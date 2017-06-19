@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
-  before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   include PostsHelper
   helper_method :sort_column , :sort_direction
 
@@ -16,10 +16,12 @@ class PostsController < ApplicationController
 
   def review
     @posts = Post.where(status: 'Submitted')
+    authorize! :review, @posts
   end
 
   def rejected
     @posts = Post.where(status: 'Rejected')
+    authorize! :rejected, @post
   end
 
   # GET /posts/1
@@ -31,19 +33,20 @@ class PostsController < ApplicationController
 
     jqtagcloud = Jqtagcloud.new
     @tag_cloud = jqtagcloud.createCloud(string, exclusion_list, 45)
-
   end
 
   # GET /posts/new
   def new
     @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.new
+    authorize! :create, @post
   end
 
   # GET /posts/1/edit
   def edit
     @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
     @post = Post.find(params[:id])
+    authorize! :update, @post
   end
 
   # POST /posts
@@ -53,6 +56,7 @@ class PostsController < ApplicationController
     @post.status = 'Submitted'
     @post.split_tag_list(params[:tags])
     @post.user = current_user
+    authorize! :create, @post
 
     respond_to do |format|
       if @post.save
@@ -60,6 +64,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
+        @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -90,6 +95,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post.tags.clear
+    authorize! :destroy, @post
     @post.destroy
     #@post.split_tag_list(params[:tags])
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
@@ -97,13 +103,18 @@ class PostsController < ApplicationController
 
 
   def upvote
+    authenticate_user!
+    @post = Post.find(params[:id])
     @post.liked_by current_user
     redirect_to :back
+    authorize! :update, @post
   end
 
   def downvote
+    @post = Post.find(params[:id])
     @post.unliked_by current_user
     redirect_to :back
+    authorize! :update, @post
   end
 
 
