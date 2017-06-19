@@ -28,8 +28,8 @@ html{
 
 .polyscape-background {
 		margin: 64px auto;
-		width: 90vw;
-		height: 90vh;
+		width: 80vw;
+		height: 80vh;
 		overflow: hidden;
 		position: relative;
 		display: flex;
@@ -51,8 +51,8 @@ html{
 /*-------------------*/
 
 /*#polyscape-1 {
-		/*background-image: url("polyscape-1/clouds2.jpg");*/
-		background-color: rgba(255, 255, 240, 0.4);
+		background-image: url("polyscape-1/clouds2.jpg");
+		background-color: rgba(240, 240, 240, 0.4);
 }
 
 #polyscape-1 .circle{
@@ -62,11 +62,11 @@ html{
 		background: url("polyscape-1/clouds2.jpg") fixed center;
 		background-size: cover;
 		filter: brightness(150%) contrast(100%);
-		/*filter: hue-rotate(60deg) contrast(100%);*/
-		/*background-color: rgba(181, 41, 41, 0.4);*/
+		filter: hue-rotate(60deg) contrast(100%);
+		background-color: rgba(181, 41, 41, 0.4);
 }
 
-/*#polyscape-1 .circle:after{
+#polyscape-1 .circle:after{
 		display: block;
 		padding-bottom: 100%;
 		width: 100%;
