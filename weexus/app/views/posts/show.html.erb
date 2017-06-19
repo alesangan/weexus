@@ -40,7 +40,7 @@
   <%= @post.user.username %>
 </p>
 
-<% if current_user.voted_for? @post %>
+<% if current_user.present? and current_user.voted_for? @post %>
 <td><%= link_to dislike_post_path(@post), method: :put do %>
   Unvote
   <%= @post.get_upvotes.size %>
@@ -54,5 +54,7 @@
 </td>
 <% end %>
 
+<% if current_user.present? and can? :update, Post %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>

@@ -41,10 +41,8 @@
         <td><%= post.user.username %></td>
         <td><%= post.created_at.strftime("%d %B %Y") %></td>
 
-        <% if can? :read, Post %>
-          <td><%= link_to 'Show', post %></td>
-        <% end %>
-        <% if current_user.voted_for? post %>
+        <td><%= link_to 'Show', post %></td>
+        <% if current_user.present? and current_user.voted_for? post %>
         <td><%= link_to dislike_post_path(post), method: :put do %>
           Unvote
           <%= post.get_upvotes.size %>
