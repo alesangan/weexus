@@ -19,9 +19,11 @@
   <div class="field">
     <%= f.label :status %>
     <%= f.radio_button(:status, "Active") %>
-    <%= f.label(:status_active, "Active") %>
+    <%= f.label(:status_active, "Active", :style => "display:inline") %><br>
+
     <%= f.radio_button(:status, "Suspended") %>
-    <%= f.label(:status_active, "Suspended") %>
+    <%= f.label(:status_active, "Suspended", :style => "display:inline") %>
+
         <!--<%= f.text_field :status %>-->
   </div>
 
