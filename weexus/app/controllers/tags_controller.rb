@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :show
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags
@@ -16,19 +18,16 @@ class TagsController < ApplicationController
   # GET /tags/new
   def new
     @tag = Tag.new
-    authorize! :create, @tags
   end
 
   # GET /tags/1/edit
   def edit
-    authorize! :update, @tags
   end
 
   # POST /tags
   # POST /tags.json
   def create
     @tag = Tag.new(tag_params)
-    authorize! :create, @tags
 
     respond_to do |format|
       if @tag.save
@@ -44,7 +43,6 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1
   # PATCH/PUT /tags/1.json
   def update
-    authorize! :update, @tags
     respond_to do |format|
       if @tag.update(tag_params)
         format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
