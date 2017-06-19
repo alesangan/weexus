@@ -35,12 +35,16 @@
     <%= f.text_field :user_id %>
   </div> -->
 
+  <div class = "prev_tags">
+    <%= post.get_tag_list %>s
+  </div>
+
 
   <div class="taglist">
    <%= f.label :get_tag_list, class: 'tag list' %><br />
 <!--    <%= f.text_field :get_tag_list %>-->
-    <select name="tags[]" id="tag_a">
-      <option value="">Select Tag</option>
+    <select name="tags[]" id="tag_a" required>
+      <option value="">Select Tag,</option>
       <%= options_for_select(@tag_options) %>
     </select>
     <select name="tags[]" id="tag_b">
