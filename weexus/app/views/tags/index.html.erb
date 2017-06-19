@@ -2,11 +2,13 @@
 
 <h1>Tags</h1></br>
 
-<div id="tag_cloud"><span class='shadow'></span>
-  <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag), class: css_class %>
-  <% end %>
-</div><br />
+<br />
+  <div id="tag_cloud"><span class='shadow'></span>
+      <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag), class: css_class %>
+      <% end %>
+</div>
+  <br />
 
 
 <table>
