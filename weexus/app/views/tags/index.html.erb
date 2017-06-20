@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tags</h1></br>
+<h1>Our Experience Tags</h1></br>
 
 <br />
   <div id="tag_cloud"><span class='shadow'></span>
@@ -8,17 +8,17 @@
       <%= link_to tag.name, tag_path(tag), class: css_class %>
       <% end %>
 </div>
-  <br />
+  </br></br>
+
+<%= link_to 'Create a New Tag', new_tag_path %>
+</br></br>
 
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Status</th>
-<!--AH TYPE NOT USEFUL 21.05.17
-      <th>Type</th>
--->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,7 +33,7 @@
         <td><%= tag.type %></td>
 -->
         <td><%= link_to 'Show all Tagged Posts', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+        <td><%= link_to 'Edit Tag', edit_tag_path(tag) %></td>
 
 <!--ALEXH CHANGE STATUS IN EDIT RATHER THAN DESTROY TAGS
         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -44,5 +44,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Tag', new_tag_path %>

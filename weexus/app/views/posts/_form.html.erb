@@ -15,14 +15,13 @@
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, :required => 'required'%>
-  </div>
+  </div></br>
 
 
   <div class="field trix_weexus">
     <%= f.label :content, :required => 'required' %>
     <%= f.trix_editor :content, :required => 'required'%>
-
-  </div>
+  </div></br>
 
   <!-- AH DELETED THE USER & STATUS FIELDS - NOT REQUIRED for WEEXUS
     <div class="field">
@@ -36,15 +35,15 @@
   </div> -->
 
   <div class = "prev_tags">
-    <%= post.get_tag_list %>s
-  </div>
+    <%= post.get_tag_list %>
+  </div></br>
 
 
   <div class="taglist">
-   <%= f.label :get_tag_list, class: 'tag list' %><br />
+    <%= f.label :get_tag_list, 'Tag your Experience in our Cloud', class: 'tag list' %><br />
 <!--    <%= f.text_field :get_tag_list %>-->
     <select name="tags[]" id="tag_a" required>
-      <option value="">Select Tag,</option>
+      <option value="">Select Tag</option>
       <%= options_for_select(@tag_options) %>
     </select>
     <select name="tags[]" id="tag_b">
@@ -56,11 +55,11 @@
       <%= options_for_select(@tag_options) %>
     </select>
 
-  </div>
+  </div></br>
 
 
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div></br>
 
 <% end %>
