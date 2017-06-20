@@ -27,7 +27,7 @@ class Jqtagcloud
       end
     end
     counts = counts.sort_by {|_key, value| value}.reverse.to_h
-    hashnew = counts.reject { |k, _| exclusion_list.include? k }
+    hashnew = counts.reject { |k, _| @exclusion_list.include? k }
     #  raise hashnew.inspect
     arrnew = Array.new
     counter = @counter

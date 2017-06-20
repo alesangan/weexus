@@ -60,25 +60,25 @@
         });
     </script>
 
-<% if user_signed_in? %>
+
 
 
 <div class="flex">
   <div class="flexitem searchtab">Search</div>
   <div class="flexitem" id="home"><%= link_to 'Home', home_index_path %></div>
   <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb'%></div>
+  <% if user_signed_in? %>
   <div class="flexitem"><%= link_to 'Submit a Story', new_post_path %></div>
   <div class="flexitem"><%=link_to 'Edit Profile'%></div>
-  <% if can? :update, Post %>
-  <div class="flexitem"><%= link_to 'Posts', posts_path %></div>
   <% end %>
-  <% if can? :manage, Tag %>
+  <div class="flexitem"><%= link_to 'Posts', posts_path %></div>
+  <% if user_signed_in? %>
+  <% if can? :update, Tag %>
   <div class="flexitem"><%= link_to 'Tags', tags_path %></div>
   <% end %>
-  <% if can? :manage, Exclusion %>
+  <% if can? :update, Exclusion %>
   <div class="flexitem"><%= link_to 'Exclusion', exclusions_path %></div>
   <% end %>
-  <div class="flexitem">Manage Complaints</div>
   <% if can? :manage, User %>
   <div class="flexitem"><%= link_to 'Users', users_path %></div>
   <% end %>

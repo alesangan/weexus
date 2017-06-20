@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :only => :show
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags

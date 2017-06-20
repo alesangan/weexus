@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
+  skip_authorize_resource :only => [:show, :index, :upvote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   include PostsHelper
   helper_method :sort_column , :sort_direction
 
@@ -31,7 +32,6 @@ class PostsController < ApplicationController
 
     jqtagcloud = Jqtagcloud.new
     @tag_cloud = jqtagcloud.createCloud(string, exclusion_list, 45)
-
   end
 
   # GET /posts/new
@@ -60,6 +60,7 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
+        @tag_options = Tag.select{ |t| t.status == "Active"}.map{ |t| [t.name]} #AH NEW
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -97,11 +98,15 @@ class PostsController < ApplicationController
 
 
   def upvote
+    authenticate_user!
+    @post = Post.find(params[:id])
     @post.liked_by current_user
     redirect_to :back
+    authorize! :upvote, @post
   end
 
   def downvote
+    @post = Post.find(params[:id])
     @post.unliked_by current_user
     redirect_to :back
   end

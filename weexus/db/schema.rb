@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615175504) do
+
+ActiveRecord::Schema.define(version: 20170619175600) do
+c9bc56fc727a14eda5b80d6c3dcf58777b2d428f
 
   create_table "exclusions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "word"
@@ -21,12 +23,12 @@ ActiveRecord::Schema.define(version: 20170615175504) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
-    t.text     "content",            limit: 65535
+    t.text     "content",            limit: 4294967295
     t.string   "status"
     t.integer  "user_id"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.integer  "cached_votes_total",               default: 0
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.integer  "cached_votes_total",                    default: 0
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
