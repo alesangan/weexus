@@ -5,8 +5,8 @@ class Ability
     user ||= User.new
 
     can :manage, :all if user.role == "superadmin"
-    can [:create, :update, :read, :destroy, :review, :rejected], [Post, Tag, Exclusion] if user.role == "admin"
-    can [:create, :read], [Post, Tag] if user.role == "user"
+    can [:create, :update, :read, :destroy, :review, :rejected, :upvote, :downvote], [Post, Tag, Exclusion] if user.role == "admin"
+    can [:create, :read, :upvote, :downvote], [Post, Tag] if user.role == "user"
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

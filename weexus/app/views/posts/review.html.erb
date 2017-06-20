@@ -28,7 +28,7 @@
         <% if can? :update, Post %>
           <td><%= link_to 'Approve', post_path(post, :post => {:status => 'Done'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
-        <% if can? :delete, @post %>
+        <% if can? :update, Post %>
           <td><%= link_to 'Reject', post_path(post, :post => {:status => 'Rejected'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
       </tr>
