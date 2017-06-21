@@ -8,6 +8,7 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( demo.css )
 Rails.application.config.assets.precompile += %w( polyscape.css )
+Rails.application.config.assets.precompile += %w( tags.scss )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
