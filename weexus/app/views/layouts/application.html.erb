@@ -82,13 +82,8 @@
   <div class="flexitem" id="home"><%= link_to 'Home', home_index_path %></div>
   <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb'%></div>
   <% if user_signed_in? %>
-<<<<<<< HEAD
   <div class="flexitem"><%= link_to 'Submit a Story', new_post_path %></div>
   <div class="flexitem"><%=link_to 'Edit Profile', users_profile_path %></div>
-=======
-  <div class="flexitem"><%= link_to 'Share your Experience', new_post_path %></div>
-  <div class="flexitem"><%=link_to 'Edit Profile'%></div>
->>>>>>> 469b5a512fcede46b815844f1682bf489d2ac51d
   <% end %>
   <div class="flexitem"><%= link_to 'Our Experiences', posts_path %></div>
   <% if user_signed_in? %>
