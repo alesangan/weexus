@@ -9,18 +9,18 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:search]
-      @posts = Post.where(status: 'Done').search(params[:search]).order("created_at DESC").order(sort_column + " " + sort_direction)
+      @posts = Post.where(status: 'Done').search(params[:search]).order("created_at DESC").order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 5)
     else
-      @posts = Post.where(status: 'Done').order(sort_column + " " + sort_direction)
+      @posts = Post.where(status: 'Done').order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 2)
     end
   end
 
   def review
-    @posts = Post.where(status: 'Submitted')
+    @posts = Post.where(status: 'Submitted').paginate(page: params[:page], per_page: 2)
   end
 
   def rejected
-    @posts = Post.where(status: 'Rejected')
+    @posts = Post.where(status: 'Rejected').paginate(page: params[:page], per_page: 2)
   end
 
   # GET /posts/1

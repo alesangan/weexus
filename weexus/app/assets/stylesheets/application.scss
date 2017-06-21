@@ -19,6 +19,8 @@
  /*div { border: 1px solid purple; }*/
 
 /* styles all text in a font that suits what the user is used to depending on their machine */
+@import "font-awesome-sprockets";
+@import "font-awesome";
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 

@@ -5,7 +5,7 @@ class ExclusionsController < ApplicationController
   # GET /exclusions
   # GET /exclusions.json
   def index
-    @exclusions = Exclusion.all
+    @exclusions = Exclusion.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /exclusions/1

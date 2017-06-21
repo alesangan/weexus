@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags = Tag.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /tags/1

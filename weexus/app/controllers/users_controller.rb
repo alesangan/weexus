@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /users/1
@@ -20,14 +20,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    
+
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(post_params)
-
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: 'User was successfully created.' }
