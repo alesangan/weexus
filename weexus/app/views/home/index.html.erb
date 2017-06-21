@@ -65,7 +65,7 @@
     </div>
 
 
-<!--<div id="polyscape-1" class="polyscape-background">
+<div id="polyscape-1" class="polyscape-background">
       <div class="square-rotated"></div>
       <div class="square"></div>
       <div class="circle">
@@ -73,25 +73,21 @@
         <div class="circle__inner">
         <div class="circle__wrapper">
 
-    <div id="tag_cloud">
-       <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag), class: css_class %>
-          <% end %>
-
-        </div>
-
       </div>
       </div>
 
       </div>
     </div>
-  -->
-
 
 
   <div id="polyscape-5" class="polyscape-background">
       <div class="triangle"></div>
       <div class="triangle"></div>
+  <ul class="homelinks" style="list-style: none">
+      <li><h2><%= link_to 'About Weexus', '/pages/aboutweexus' %></h2></li>
+    </br>
+      <li><h2><%= link_to 'How to share your Experience', '/pages/howto' %></h2></li>
+  </ul>
     </div>
 
 

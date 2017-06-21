@@ -28,15 +28,14 @@
   <div class="container">
 
 
-    <header>
+<header>
   <div class="firstheader">
 
     <div class="logo">
-    <%= image_tag "Final-Logo-blue.png", height: 130, alt: 'logo' %>
-  </div>
+      <%= image_tag "Final-Logo-blue.png", height: 140, alt: 'logo' %>
+    </div>
 
     <div class="header_login">
-
       <% if user_signed_in? %>
         <p class="logout">
           <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
@@ -100,14 +99,14 @@
 
 
 <script>
-$(function(){
-  $('.burger').click(function(){
-    $('.flex').slideToggle();
+  $(function(){
+    $('.burger').click(function(){
+      $('.flex').slideToggle();
+    });
   });
-});
-</script>
+  </script>
 <% end %>
-    </header>
+</header>
 
     <div id="main-content">
       <%= yield %>
@@ -120,7 +119,7 @@ $(function(){
         <div class="flexitem"><%= link_to 'Privacy', '/pages/privacy.erb'%></div>
         <div class="contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
         <div class="flexitem submissionhelp">
-          <%= link_to 'Advice - how to write a submission', '/pages/howto' %>
+          <%= link_to 'How to share your Experience', '/pages/howto' %>
         </div>
       </div>
 
