@@ -69,7 +69,7 @@
   <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb'%></div>
   <% if user_signed_in? %>
   <div class="flexitem"><%= link_to 'Submit a Story', new_post_path %></div>
-  <div class="flexitem"><%=link_to 'Edit Profile'%></div>
+  <div class="flexitem"><%=link_to 'Edit Profile', users_profile_path %></div>
   <% end %>
   <div class="flexitem"><%= link_to 'Posts', posts_path %></div>
   <% if user_signed_in? %>

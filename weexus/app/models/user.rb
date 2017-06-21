@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   ROLES = %i[superadmin admin user]
   acts_as_voter
-
+  # attr_accessor :terms_and_conditions
+  # validates_acceptance_of :terms_and_conditions, :allow_nil => false, :message => ""
 end
