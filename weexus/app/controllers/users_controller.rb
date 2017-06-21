@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :only => :profile
   before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -44,13 +45,17 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(post_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_url, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def profile
+    @posts=Post.where(user: current_user.id, status: 'Done').or(Post.where(user: current_user.id, status: 'Submitted'))
   end
 
   # DELETE /users/1

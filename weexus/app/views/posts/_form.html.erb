@@ -23,17 +23,6 @@
     <%= f.trix_editor :content, :required => 'required'%>
   </div></br>
 
-  <!-- AH DELETED THE USER & STATUS FIELDS - NOT REQUIRED for WEEXUS
-    <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div> -->
-
-  <!-- <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div> -->
-
   <div class = "prev_tags">
     <%= post.get_tag_list %>
   </div></br>
@@ -41,7 +30,6 @@
 
   <div class="taglist">
     <%= f.label :get_tag_list, 'Tag your Experience in our Cloud', class: 'tag list' %><br />
-<!--    <%= f.text_field :get_tag_list %>-->
     <select name="tags[]" id="tag_a" required>
       <option value="">Select Tag</option>
       <%= options_for_select(@tag_options) %>

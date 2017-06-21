@@ -28,16 +28,8 @@
       <tr>
         <td><%= tag.name %></td>
         <td><%= tag.status %></td>
-
-<!--AH TYPE NOT USEFUL 21.05.17
-        <td><%= tag.type %></td>
--->
         <td><%= link_to 'Show all Tagged Posts', tag %></td>
         <td><%= link_to 'Edit Tag', edit_tag_path(tag) %></td>
-
-<!--ALEXH CHANGE STATUS IN EDIT RATHER THAN DESTROY TAGS
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--->
       </tr>
     <% end %>
   </tbody>

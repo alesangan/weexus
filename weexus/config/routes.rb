@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'posts/review'
   get 'posts/rejected'
+  get 'users/profile'
 
   resources :tags
   resources :posts do
