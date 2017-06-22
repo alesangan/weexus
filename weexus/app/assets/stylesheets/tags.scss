@@ -19,21 +19,19 @@ body {
       -webkit-stroke-width: 5.3px;
       -webkit-stroke-color: #FFFFFF;
       -webkit-fill-color: #FFFFFF;
-      text-shadow: 1px 0px 20px white;
+      text-shadow: 1px 0px 20px #A0C1B8;
       background-color: transparent;
     }
 
-  .a { font-size: 1.8em; color: #709FB0; vertical-align: super; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
-  .c { font-size: 2.8em; color: #87CEEB; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
-  .e { font-size: 3.5em; color: #A0C1B8; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
-  .f { font-size: 4.0em; color: #709FB0; vertical-align: super; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
-  .b { font-size: 2.2em; color: #726A95; vertical-align: sub; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
-  .d { font-size: 8.0em; color: #A0C1B8; line-height: -2.0; transition: all 0.3s ease-in; text-decoration: none;}
+  .a { font-size: 1.8em; color: #351F39; vertical-align: super; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
+  .c { font-size: 2.0em; color: #87CEEB; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
+  .e { font-size: 2.5em; color: #726A95; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
+  .f { font-size: 3.0em; color: #709FB0; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
+  .b { font-size: 2.2em; color: #351F39; vertical-align: sub; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
+  .d { font-size: 5.0em; color: #726A95; line-height: 0.3 !important; transition: all 0.3s ease-in; text-decoration: none;}
 }
 
 /*.d { font-size: 8.0em; color: #87CEEB; line-height: -2.0; text-decoration: none; text-shadow: -0.5px 1.0px 0.5px #ffc, 0.5px -0.5px 0.5px #fff;}*/
-
-
 
 
 @media (min-width: 280px) {#tag_cloud
