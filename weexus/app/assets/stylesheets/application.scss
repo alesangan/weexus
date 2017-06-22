@@ -24,6 +24,7 @@
 /* styles all text in a font that suits what the user is used to depending on their machine */
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -67,8 +68,9 @@
 /* magnifying glass search button styling */
 .search {
   cursor: pointer;
-  margin-top: 5%;
-  margin-left: 2%;
+  margin-top: 20%;
+  margin-left: 50%;
+
 }
 
 /* flex container for second header e.g. home, edit profile, posts etc */
@@ -229,7 +231,7 @@
     margin-top: 3%;
     margin-left: 2%;
   }
-
+  
   .searchtab {
     display: inline;
   }
