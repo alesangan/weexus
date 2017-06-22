@@ -17,6 +17,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "tags";
+ @import "wordcloud";
+ @import "aboutweexus";
+ @import "contact";
+ @import "demo";
+ @import "polyscape";
+ @import "exclusions";
+ @import "howto";
+ @import "posts";
+ @import "privacy";
+ @import "trix_weexus";
+ @import "users";
+
+
 
 
  /*div { border: 1px solid purple; }*/
@@ -26,10 +39,6 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-
-#homelinks h1 {
-  color: white
-}
 
 
 /* pushes footer down to bottom of page */
@@ -81,6 +90,25 @@
   margin-left: 2%;
   margin-right: 3%;
 }
+
+
+/*fonts for main page*/
+.homelinks1 {
+  color: white;
+  font-size: 155%;
+}
+
+.homelinks2 {
+  color: darkgrey;
+  font-size: 70%;
+}
+
+.homelinks3 {
+  color: white;
+  font-size: 70%;
+}
+
+
 
 /* styling of second header flex items e.g. home, edit profile, posts etc */
 .flexitem {
