@@ -16,11 +16,13 @@ html{
 html{
     min-height: 100%
 }
+
+
 /*-------------------*/
 /* Background styles */
 /*-------------------*/
 .polyscape-background {
-        margin: 64px auto;
+        margin: 50px auto;
         /*width: 80vw;*/
         height: 75vh;
         overflow: hidden;
@@ -135,7 +137,7 @@ html{
 /*      Polyscape 4      */
 /*-------------------*/
 #polyscape-4 {
-        background-image: url("polyscape-4/clouds2.jpg");
+        background-image: url("polyscape-4/citysky.jpg");
         /*filter: grayscale(25%);*/
 }
 #polyscape-4 .circle{
@@ -145,11 +147,12 @@ html{
         height: 400px;
         margin: 2em 0em;
         border-radius: 50%;
-        background: url("polyscape-4/people.jpg") fixed center;
+        background: url("polyscape-4/clouds2.jpg") fixed center;
         background-size: contain;
             /*filter: hue-rotate(120deg) contrast(140%);*/
         filter: hue-rotate(30deg) brigthness(5%) contrast(0%);
         text-align: center;
+        background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,255,255,1));
       }
 #polyscape-4 .circle:after{
         display: block;
