@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /users/1
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(post_params)
-
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to '/', notice: 'User was successfully created.' }
@@ -44,13 +44,17 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(post_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_url, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def profile
+    @posts=Post.where(user: current_user.id, status: 'Done').or(Post.where(user: current_user.id, status: 'Submitted'))
   end
 
   # DELETE /users/1

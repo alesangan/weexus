@@ -1,5 +1,43 @@
 <h1>Editing User</h1>
 
-<%= render 'form', user: @user %>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <p>
+      <%= @user.email %>
+    </p>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <p>
+      <%= @user.username  %>
+    </p>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Edit User" %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', users_path %>

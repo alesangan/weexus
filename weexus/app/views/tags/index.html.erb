@@ -33,7 +33,7 @@
         <td><%= tag.type %></td>
 -->
         <td><%= link_to 'Show all Tagged Posts', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+        <td><%= link_to icon('pencil-square-o'), edit_tag_path(tag) %></td>
 
 <!--ALEXH CHANGE STATUS IN EDIT RATHER THAN DESTROY TAGS
         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -46,3 +46,5 @@
 <br>
 
 <%= link_to 'New Tag', new_tag_path %>
+<!-- renderer:BootstrapPagination::Rails -->
+<%= will_paginate @posts, inner_window: 1,outer_window: 0%>

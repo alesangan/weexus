@@ -1,12 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Rejected Posts</h1>
-
+<% if can? :update, Post %>
+  <%= link_to 'Approved Posts', posts_path %>&nbsp;&nbsp;
+  <%= link_to 'Pending Posts', posts_review_path %>
+<% end %>
+<br><br><br><br>
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Content</th>
+      <!-- <th>Content</th> -->
       <th>Tags</th>
       <th>Status</th>
       <th>User</th>
@@ -17,14 +21,18 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content.truncate(50, separator: ' ').html_safe%></td>
+        <% if can? :read, Post %>
+          <td><%= link_to post.title, post %></td>
+        <% else %>
+          <td><%= post.title %></td>
+        <%end%>
+        <!-- <td><%= post.content.truncate(50, separator: ' ').html_safe%></td> -->
         <td><%= post.get_tag_list %></td>
         <td><%= post.status %></td>
         <td><%= post.user.username %></td>
-        <% if can? :read, Post %>
+        <!-- <% if can? :read, Post %>
           <td><%= link_to 'Show', post %></td>
-        <% end %>
+        <% end %> -->
         <% if can? :update, Post %>
           <td><%= link_to 'Approve', post_path(post, :post => {:status => 'Done'}), :method => :patch, :confirm => 'Are you sure?' %></td>
         <% end %>
@@ -37,3 +45,5 @@
 <br>
 
 <%= link_to 'Back', posts_path %>
+<!-- renderer:BootstrapPagination::Rails -->
+<%= will_paginate @posts, inner_window: 1,outer_window: 0%>
