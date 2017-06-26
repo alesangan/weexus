@@ -1,45 +1,10 @@
 
 <div>
-<!--<nav class = "dark">
-      <li class>
-        <a href="#polyscape-1">
-        ::after
-        </a>
-      </li>
-
-      <li class>
-        <a href="#polyscape-2">
-        ::after
-        </a>
-      </li>
-
-      <li class>
-        <a href="#polyscape-3">
-        ::after
-        </a>
-      </li>
-
-      <li class>
-        <a href="#polyscape-4">
-        ::after
-        </a>
-      </li>
-
-      <li class "active">
-        <a href="#polyscape-5">
-        ::after
-        </a>
-      </li>
-    </nav>-->
-
-<!--    <div id="polyscape-2" class="polyscape-background">
-      <div class="diamond"></div>
-      <div class="diamond"></div>
-    </div> -->
-
-<!--    <div id="polyscape-3" class="polyscape-background">
-      <div class="triangle"></div>
-    </div> -->
+</br>
+  <div id="welcome">
+      <h2>Share your unique experience.</h2>
+      <!--<p>Share your experience with others, record your memories, create your story.</p>-->
+      </div>
 
    <div id="polyscape-4" class="polyscape-background">
       <div class="square-rotated"></div>
@@ -65,33 +30,34 @@
     </div>
 
 
-<!--<div id="polyscape-1" class="polyscape-background">
+<div id="polyscape-1" class="polyscape-background">
       <div class="square-rotated"></div>
       <div class="square"></div>
       <div class="circle">
+        <ul class="homelinks1" style="list-style: none">
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new' %></li>
+            <li class="homelinks2">Share your experience with others, record your memories, create your story.</li>
+        </ul>
 
         <div class="circle__inner">
         <div class="circle__wrapper">
-
-    <div id="tag_cloud">
-       <% tag_cloud Post.tag_counts, %w[a b c d e f] do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag), class: css_class %>
-          <% end %>
-
-        </div>
 
       </div>
       </div>
 
       </div>
     </div>
-  -->
-
 
 
   <div id="polyscape-5" class="polyscape-background">
       <div class="triangle"></div>
       <div class="triangle"></div>
+  <ul class="homelinks1" style="list-style: none">
+      <li class=homelinks1><%= link_to 'About Weexus', '/pages/aboutweexus'%></li>
+      <li class="homelinks3">Weexus is an open platform for sharing unique personal experiences and stories from across the world.</li>
+      <li>
+
+  </ul>
     </div>
 
 

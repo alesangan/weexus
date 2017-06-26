@@ -4,17 +4,31 @@
     <title>Weexus</title>
     <%= csrf_meta_tags %>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'demo.css', media: 'all' %>
     <%= stylesheet_link_tag 'polyscape.css', media: 'all' %>
+    <%= stylesheet_link_tag 'tags.scss', media: 'all' %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   </head>
 
   <body>
-    <header>
 
+<!--bootstrap-->
+  <div class="container">
+
+
+<header>
   <div class="firstheader">
 
     <div class="logo">
@@ -23,8 +37,8 @@
 
   </div>
 
-    <div class="header_login">
 
+    <div class="header_login">
       <% if user_signed_in? %>
         <p class="logout">
           <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
@@ -70,16 +84,16 @@
   <div class="flexitem" id="home"><%= link_to 'Home', home_index_path %></div>
   <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb'%></div>
   <% if user_signed_in? %>
-  <div class="flexitem"><%= link_to 'Submit a Story', new_post_path %></div>
-  <div class="flexitem"><%=link_to 'Edit Profile', users_profile_path %></div>
+  <div class="flexitem"><%= link_to 'Share your Story', new_post_path %></div>
+  <div class="flexitem"><%=link_to 'Edit your Profile', users_profile_path %></div>
   <% end %>
-  <div class="flexitem"><%= link_to 'Posts', posts_path %></div>
+  <div class="flexitem"><%= link_to 'Our Experiences', posts_path %></div>
   <% if user_signed_in? %>
   <% if can? :update, Tag %>
   <div class="flexitem"><%= link_to 'Tags', tags_path %></div>
   <% end %>
   <% if can? :update, Exclusion %>
-  <div class="flexitem"><%= link_to 'Exclusion', exclusions_path %></div>
+  <div class="flexitem"><%= link_to 'Exclusions', exclusions_path %></div>
   <% end %>
   <% if can? :manage, User %>
   <div class="flexitem"><%= link_to 'Users', users_path %></div>
@@ -88,14 +102,14 @@
 
 
 <script>
-$(function(){
-  $('.burger').click(function(){
-    $('.flex').slideToggle();
+  $(function(){
+    $('.burger').click(function(){
+      $('.flex').slideToggle();
+    });
   });
-});
-</script>
+  </script>
 <% end %>
-    </header>
+</header>
 
     <div id="main-content">
       <%= yield %>
@@ -108,9 +122,10 @@ $(function(){
         <div class="flexitem"><%= link_to 'Privacy', '/pages/privacy.erb'%></div>
         <div class="contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
         <div class="flexitem submissionhelp">
-          <%= link_to 'Advice - how to write a submission', '/pages/howto' %>
+          <%= link_to 'How to share your Experience', '/pages/howto' %>
         </div>
       </div>
 
   </body>
+</div>
 </html>
