@@ -10,14 +10,14 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th><%= sortable "title","Title"%></th>
+      <!-- <th>Content</th> -->
       <th>Tags</th>
       <th>Status</th>
       <th>User</th>
-      <th>Shared On</th>
+      <th><%= sortable "created_at","Shared on"%></th>
       <th colspan="1"></th>
-      <th>Votes</th>
+      <th><%= sortable "cached_votes_total", "Votes"%></th>
     </tr>
 
   </thead>
@@ -26,36 +26,44 @@
 
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content.truncate(50, separator: ' ').html_safe %></td>
+        <% if can? :read, Post %>
+          <td><%= link_to post.title, post %></td>
+        <% else %>
+          <td><%= post.title %></td>
+        <%end%>
+        <!-- <td><%= post.content.truncate(50, separator: ' ').html_safe %></td> -->
         <td><%= post.get_tag_list %></td>
         <td><%= post.status %></td>
         <td><%= post.user.username %></td>
         <td><%= post.created_at.strftime("%d %B %Y") %></td>
 
-        <td><%= link_to 'Show', post %></td>
+        <!-- <td><%= link_to 'Show', post %></td> -->
         <% if current_user.present? and current_user.voted_for? post %>
         <td><%= link_to dislike_post_path(post), method: :put do %>
-          Unvote
+          <!-- Unvote -->
+            <%=  icon('thumbs-o-down')%>
           <%= post.get_upvotes.size %>
           <% end %>
         </td>
         <% else %>
         <td><%= link_to like_post_path(post), method: :put do %>
-          Upvote
+          <!-- Upvote -->
+          <%=  icon('thumbs-o-up')%>
           <%= post.get_upvotes.size %>
           <% end %>
         </td>
         <% end %>
         <% if can? :update, Post %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%=  link_to icon('pencil-square-o'), edit_post_path(post) %></td>
         <% end %>
 
         <% if can? :delete, @post %>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to icon('trash-o'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
 
       </tr>
     <% end %>
   </tbody>
 </table>
+<!-- renderer:BootstrapPagination::Rails -->
+<%= will_paginate @posts, inner_window: 1,outer_window: 0%>

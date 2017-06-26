@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy]
+  include UsersHelper
+  helper_method :sort_column , :sort_direction
 
   # GET /users
   # GET /users.json
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(post_params)
-    
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to '/', notice: 'User was successfully created.' }
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @posts=Post.where(user: current_user.id, status: 'Done').or(Post.where(user: current_user.id, status: 'Submitted'))
+    @posts=Post.where(user: current_user.id, status: 'Done').or(Post.where(user: current_user.id, status: 'Submitted')).order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 5)
   end
 
   # DELETE /users/1
