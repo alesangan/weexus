@@ -35,7 +35,11 @@
       <div class="square"></div>
       <div class="circle">
         <ul class="homelinks1" style="list-style: none">
+          <% if user_signed_in? %>
             <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new' %></li>
+            <% else %>
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/my/users/sign_in' %></li>
+            <% end %>
             <li class="homelinks2">Share your experience with others, record your memories, create your story.</li>
         </ul>
 
