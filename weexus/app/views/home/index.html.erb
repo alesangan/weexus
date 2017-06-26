@@ -2,8 +2,8 @@
 <div>
   <!--<div id="welcomea">
       <h2 class="welcomeb">Share your unique experience.</h2>
-        <!--<p>Share your experience with others, record your memories, create your story.</p>-->
-    </div>
+        <p>Share your experience with others, record your memories, create your story.</p>
+    </div>-->
 
    <div id="polyscape-4" class="polyscape-background">
       <div class="square-rotated"></div>
@@ -34,15 +34,13 @@
       <div class="square"></div>
       <div class="circle">
         <ul class="homelinks1" style="list-style: none">
-<<<<<<< HEAD
-            <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new', class: 'linkstyling1'%></li>
-=======
+
           <% if user_signed_in? %>
-            <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new' %></li>
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new', class: 'linkstyling1'%></li>
             <% else %>
-            <li class="homelinks1"><%= link_to 'Share your Experience', '/my/users/sign_in' %></li>
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/my/users/sign_in', class: 'linkstyling1'%></li>
             <% end %>
->>>>>>> 933018c6fda80e06eed9cf8cbd42ce7d887c01c0
+
             <li class="homelinks2">Share your experience with others, record your memories, create your story.</li>
         </ul>
 

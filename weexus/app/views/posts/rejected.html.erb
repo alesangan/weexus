@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rejected Posts</h1>
+<h1 class="mytitle">Rejected Posts</h1>
 <% if can? :update, Post %>
   <%= link_to 'Approved Posts', posts_path %>&nbsp;&nbsp;
   <%= link_to 'Pending Posts', posts_review_path %>

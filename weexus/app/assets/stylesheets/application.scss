@@ -41,12 +41,15 @@
 
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background: #F8F8F8}
+  background: white;
+  }
 
 
 /* pushes footer down to bottom of page */
 #main-content {
   min-height: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* logo, sign out & search bar styling*/
@@ -102,7 +105,6 @@
   font-size: 200%;
 }
 
-
 .welcomec {
   color: #709FB0;
   font-size: 100%;
@@ -128,26 +130,31 @@
 
 .title {
   font-size: 200%;
-  color: #726A95;
-  padding-top: 10px
+  color: #709FB0;
+  padding-top: 10px;
 }
 
+.mytitle {
+  font-size: 200%;
+  color: #709FB0;
+  padding-top: 10px;
+}
 
 .linkstyling1 {
   color: white;
   text-shadow: 1px 1px lightgrey;
-  font-size: 160%
+  font-size: 150%
 }
 
 .linkstyling2 {
   color: white;
   text-shadow: 1px 1px lightgrey;
-  font-size: 160%
+  font-size: 150%
 }
 
 .abouttext1 {
   font-size: 150%;
-  color: black;
+  color: #726A95;
   padding-left: 20px;
   padding-right: 20px;
 }
