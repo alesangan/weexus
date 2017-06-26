@@ -29,25 +29,16 @@
         <td><%= tag.name %></td>
         <td><%= tag.status %></td>
         <td><%= link_to 'Show all Tagged Posts', tag %></td>
-<<<<<<< HEAD
+
         <td><%= link_to icon('pencil-square-o'), edit_tag_path(tag) %></td>
 
-<!--ALEXH CHANGE STATUS IN EDIT RATHER THAN DESTROY TAGS
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--->
-=======
-        <td><%= link_to 'Edit Tag', edit_tag_path(tag) %></td>
->>>>>>> ce0cc884a9e05068a5eb822a6084943c5fdf6331
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<<<<<<< HEAD
 
 <%= link_to 'New Tag', new_tag_path %>
 <!-- renderer:BootstrapPagination::Rails -->
 <%= will_paginate @posts, inner_window: 1,outer_window: 0%>
-=======
->>>>>>> ce0cc884a9e05068a5eb822a6084943c5fdf6331
