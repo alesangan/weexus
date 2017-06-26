@@ -35,29 +35,27 @@
     <%= image_tag "Final-Logo-blue.png", height: 130, alt: 'logo' %>
   </div>
 
-
     <div class="header_login">
       <% if user_signed_in? %>
-        <p class="logout">
           <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-        </p>
-          <% else %>
-        <p>
+      <% else %>
           <%=link_to 'Login / Sign up', new_user_session_path, :method => :create %>
-        </p>
       <% end %>
     </div>
 
     <div class="searchBox">
-        <span id="searchContainer" style="cursor: hand">
-            <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
-                <path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path>
-            </svg>
-        </span>
-        <%= form_tag(posts_path, method: "get", id: "searchBox") do %>
-                <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-                <%= submit_tag "Search" %>
-        <% end %>
+
+      <%= form_tag(posts_path, method: "get", id: "searchBox") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+              <%= submit_tag "Search" %>
+      <% end %>
+
+    </div>
+
+    <div id="searchContainer" style="cursor: hand">
+      <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
+          <path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path>
+      </svg>
     </div>
 
     <div class="burger">
@@ -65,12 +63,12 @@
     </div>
   </div>
 
-
     <script>
         $(function() {
             $('#searchContainer').click(function(){
               $('#searchBox').toggle();
             });
+            $('#searchBox').hide();
         });
     </script>
 
@@ -118,7 +116,7 @@
         <div class="flexitem">Twitter</div>
         <div class="flexitem">Instagram</div>
         <div class="flexitem"><%= link_to 'Privacy', '/pages/privacy.erb'%></div>
-        <div class="contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
+        <div class="flexitem contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
         <div class="flexitem submissionhelp">
           <%= link_to 'How to share your Experience', '/pages/howto' %>
         </div>

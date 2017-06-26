@@ -42,6 +42,9 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+// div {
+//     border: 1px solid silver;
+// }
 
 
 /* pushes footer down to bottom of page */
@@ -54,8 +57,11 @@
   display: flex;
   border-bottom-color: #d3d3d3;
   border-width: 0.5px;
-  margin-left: 10%;
-  margin-right: 10%;
+  align-items: center;
+}
+
+.firstheader div {
+  padding: 10px;
 }
 
 /* logo styling */
@@ -63,22 +69,34 @@
   cursor: pointer;
   margin-top: 5%;
   margin-bottom: 3%;
-  margin-right: 70%;
+  /*margin-right: 70%;
   width: 5%;
-  height: 5%;
+  height: 5%;*/
+  flex-grow: 3;
 }
 
 /* sign out button styling */
 .header_login {
   font-size: 100%;
-  margin-top: 10%;
+  // margin-top: 10%;
   }
 
 /* magnifying glass search button styling */
-.search {
-  cursor: pointer;
-  margin-top: 20%;
-  margin-left: 50%;
+.svgIcon-use {
+  /* margin-left: 50%; */
+}
+
+// div {
+//   border: 1px solid silver;
+// }
+
+#searchBox {
+  display: inline;
+  display: none;
+}
+
+.element.style {
+  margin-top: 50%;
 
 }
 
@@ -124,6 +142,8 @@
   margin-left: 1%;
   color: #999999;
   white-space: nowrap;
+  color: #337ab7;
+  cursor: pointer !important;
 
 
 }
@@ -143,29 +163,29 @@
   border-top-style: solid;
   border-top-color: #d3d3d3;
   border-width: 0.5px;
-  margin-top: 4%;
+  margin-top: -205;;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-/* styling for buttons in footer OTHER than contact */
+/* styling for buttons in footer */
 .flexitem {
   flex-grow: 5;
   font-size: 14px;
   margin: 0;
   padding: 5px;
   margin-top: 2%;
-  /*color: #709FB0;*/
-}
+  cursor: pointer !important;
 
-/* styling for solely contact button in footer, separate to other buttons in footer */
-.contact {
-  flex-grow: 20;
-  font-size: 14px;
-  margin-right: 10%;
-  margin-top: 2.6%;
-  color: #999999;
-}
+  }
+
+// /* styling for solely contact button in footer, separate to other buttons in footer */
+// .contact {
+//   flex-grow: 20;
+//   font-size: 14px;
+//   margin-right: 10%;
+//   // color: #999999;
+// }
 
 .submissionhelp {
   font-size: 100%;
@@ -193,6 +213,7 @@
   .burger {
     display: inline;
     cursor: pointer;
+    margin-left: 10%;
   }
 
  /* setting the the second navigation to not appear in mobile mode*/
@@ -229,12 +250,12 @@
   }
 
 /* mobile magnifying glass search button styling */
-  .search {
-    display: none;
-    cursor: pointer;
-    margin-top: 0%;
-    margin-left: 0%;
-  }
+  // .search {
+  //   display: none;
+  //   cursor: pointer;
+  //   margin-top: 0%;
+  //   margin-left: 0%;
+  // }
 
   .footer {
     display: flex;
@@ -259,9 +280,13 @@
     margin-top: 3%;
     margin-left: 2%;
   }
-  
+
   .searchtab {
     display: inline;
+  }
+
+  .svgIcon-use {
+    display: none;
   }
 
 }
