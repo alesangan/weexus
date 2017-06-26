@@ -44,7 +44,6 @@
   background: #F8F8F8}
 
 
-
 /* pushes footer down to bottom of page */
 #main-content {
   min-height: 200px;
@@ -127,6 +126,13 @@
   font-size: 70%;
 }
 
+.title {
+  font-size: 200%;
+  color: #726A95;
+  padding-top: 10px
+}
+
+
 .linkstyling1 {
   color: white;
   text-shadow: 1px 1px lightgrey;
@@ -139,6 +145,20 @@
   font-size: 160%
 }
 
+.abouttext1 {
+  font-size: 150%;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.abouttext2 {
+  font-size: 100%;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /* styling of second header flex items e.g. home, edit profile, posts etc */
 .flexitem {
   flex-grow: 1;
@@ -149,8 +169,6 @@
   margin-left: 1%;
   color: #999999;
   white-space: nowrap;
-
-
 }
 
 /* sets burger menu to not appear in desktop */
