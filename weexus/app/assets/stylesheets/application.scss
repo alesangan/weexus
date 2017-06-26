@@ -110,7 +110,7 @@
   border-top-color: #e6e6e6;
   margin-left: 2%;
   margin-right: 3%;
-  padding-bottom: 10px
+  padding-bottom: 15px
 }
 
 
@@ -133,14 +133,14 @@
 }
 
 .homelinks2 {
-  color: white;
-  text-shadow: 0.5px 0.5px lightgrey;
+  color: #709FB0;
+  text-shadow: 0.5px 0.5px black;
   font-size: 70%;
 }
 
 .homelinks3 {
-  color: white;
-  text-shadow: 0.5px 0.5px lightgrey;
+  color: #726A95;
+  text-shadow: 0.5px 0.5px black;
   font-size: 70%;
 }
 
@@ -159,13 +159,25 @@
 .linkstyling1 {
   color: white;
   text-shadow: 1px 1px lightgrey;
-  font-size: 150%
+  font-size: 150%;
+  text-decoration: none;
 }
 
 .linkstyling2 {
   color: white;
   text-shadow: 1px 1px lightgrey;
-  font-size: 150%
+  font-size: 150%;
+  text-decoration: none;
+}
+
+.linkstyling1:hover {
+  text-decoration: none;
+  color: #709FB0;
+}
+
+.linkstyling2:hover {
+  text-decoration: none;
+  color: #726A95;
 }
 
 .abouttext1 {

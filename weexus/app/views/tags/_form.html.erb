@@ -16,11 +16,13 @@
     <%= f.text_field :name, :required => 'required'%>
   </div>
 
+</br>
+
   <div class="field">
     <%= f.label :status %>
+</br>
     <%= f.radio_button(:status, "Active") %>
     <%= f.label(:status_active, "Active", :style => "display:inline") %><br>
-
     <%= f.radio_button(:status, "Suspended") %>
     <%= f.label(:status_active, "Suspended", :style => "display:inline") %>
 
@@ -34,7 +36,7 @@
     <%= f.text_field :type %>
   </div>
 -->
-
+</br>
   <div class="actions">
     <%= f.submit %>
   </div>
