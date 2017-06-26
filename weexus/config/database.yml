@@ -16,6 +16,7 @@ default: &default
   username: weexus
   password: weexus
   socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default

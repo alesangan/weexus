@@ -33,39 +33,35 @@
 
     <div class="logo">
     <%= image_tag "Final-Logo-blue.png", height: 130, alt: 'logo' %>
-
-
   </div>
 
     <div class="header_login">
       <% if user_signed_in? %>
-        <p class="logout">
           <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-        </p>
-          <% else %>
-        <p>
+      <% else %>
           <%=link_to 'Login / Sign up', new_user_session_path, :method => :create %>
-        </p>
       <% end %>
     </div>
 
-    <div class="search">
-        <span id="searchContainer" style="cursor: hand">
-            <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
-                <path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path>
-            </svg>
-        </span>
-        <%= form_tag(posts_path, method: "get", id: "search-form") do %>
-                <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-                <%= submit_tag "Search" %>
-        <% end %>
+    <div>
+
+      <%= form_tag(posts_path, method: "get", id: "searchBox") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+              <%= submit_tag "Search" %>
+      <% end %>
+
+    </div>
+
+    <div id="searchContainer" style="cursor: hand">
+      <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
+          <path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path>
+      </svg>
     </div>
 
     <div class="burger">
       <svg height="26px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
     </div>
   </div>
-
 
     <script>
         $(function() {
@@ -119,7 +115,7 @@
         <div class="flexitem">Twitter</div>
         <div class="flexitem">Instagram</div>
         <div class="flexitem"><%= link_to 'Privacy', '/pages/privacy.erb'%></div>
-        <div class="contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
+        <div class="flexitem contact"><%= link_to 'Contact', '/pages/contact.erb'%></div>
         <div class="flexitem submissionhelp">
           <%= link_to 'How to share your Experience', '/pages/howto' %>
         </div>
