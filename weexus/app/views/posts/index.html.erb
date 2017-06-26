@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Approved Posts</h1>
+<h1>Our Experiences</h1>
 
 <% if can? :create, Post %>
   <%= link_to 'New Post', new_post_path %>
@@ -12,7 +12,7 @@
 <% end %>
 <br><br><br><br>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th><%= sortable "title","Title"%></th>

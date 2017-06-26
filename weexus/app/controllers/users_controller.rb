@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :only => :profile
   before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy]
   include UsersHelper
   helper_method :sort_column , :sort_direction
