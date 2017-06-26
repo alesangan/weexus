@@ -36,15 +36,12 @@
 
 /* styles all text in a font that suits what the user is used to depending on their machine */
 @import "font-awesome-sprockets";
-@import "font-awesome";
+@import "font-awesome.css";
+
 
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-// div {
-//     border: 1px solid silver;
-// }
+  background: #F8F8F8}
 
 
 /* pushes footer down to bottom of page */
@@ -116,22 +113,67 @@
 
 /*fonts for main page*/
 
+.welcomeb {
+  color: black;
+  font-size: 200%;
+}
+
+
+.welcomec {
+  color: #709FB0;
+  font-size: 100%;
+}
+
 .homelinks1 {
   color: white;
+  text-shadow: 1px 1px lightgrey;
   font-size: 155%;
 }
 
 .homelinks2 {
-  color: darkgrey;
+  color: white;
+  text-shadow: 0.5px 0.5px lightgrey;
   font-size: 70%;
 }
 
 .homelinks3 {
   color: white;
+  text-shadow: 0.5px 0.5px lightgrey;
   font-size: 70%;
 }
 
+.title {
+  font-size: 200%;
+  color: #726A95;
+  padding-top: 10px
+}
 
+
+.linkstyling1 {
+  color: white;
+  text-shadow: 1px 1px lightgrey;
+  font-size: 160%
+}
+
+.linkstyling2 {
+  color: white;
+  text-shadow: 1px 1px lightgrey;
+  font-size: 160%
+}
+
+.abouttext1 {
+  font-size: 150%;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.abouttext2 {
+  font-size: 100%;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 /* styling of second header flex items e.g. home, edit profile, posts etc */
 .flexitem {
@@ -143,10 +185,13 @@
   margin-left: 1%;
   color: #999999;
   white-space: nowrap;
+<<<<<<< HEAD
   color: #337ab7;
   cursor: pointer !important;
 
 
+=======
+>>>>>>> 22478b0276ad77ede76ec3a70827a2db2f0baa6d
 }
 
 /* sets burger menu to not appear in desktop */

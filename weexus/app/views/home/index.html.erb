@@ -1,10 +1,9 @@
 
 <div>
-</br>
-  <div id="welcome">
-      <h2>Share your unique experience.</h2>
-      <!--<p>Share your experience with others, record your memories, create your story.</p>-->
-      </div>
+  <!--<div id="welcomea">
+      <h2 class="welcomeb">Share your unique experience.</h2>
+        <!--<p>Share your experience with others, record your memories, create your story.</p>-->
+    </div>
 
    <div id="polyscape-4" class="polyscape-background">
       <div class="square-rotated"></div>
@@ -35,7 +34,15 @@
       <div class="square"></div>
       <div class="circle">
         <ul class="homelinks1" style="list-style: none">
+<<<<<<< HEAD
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new', class: 'linkstyling1'%></li>
+=======
+          <% if user_signed_in? %>
             <li class="homelinks1"><%= link_to 'Share your Experience', '/posts/new' %></li>
+            <% else %>
+            <li class="homelinks1"><%= link_to 'Share your Experience', '/my/users/sign_in' %></li>
+            <% end %>
+>>>>>>> 933018c6fda80e06eed9cf8cbd42ce7d887c01c0
             <li class="homelinks2">Share your experience with others, record your memories, create your story.</li>
         </ul>
 
@@ -53,7 +60,7 @@
       <div class="triangle"></div>
       <div class="triangle"></div>
   <ul class="homelinks1" style="list-style: none">
-      <li class=homelinks1><%= link_to 'About Weexus', '/pages/aboutweexus'%></li>
+      <li class=homelinks1><%= link_to 'About Weexus', '/pages/aboutweexus', class: 'linkstyling2'%></li>
       <li class="homelinks3">Weexus is an open platform for sharing unique personal experiences and stories from across the world.</li>
       <li>
 
