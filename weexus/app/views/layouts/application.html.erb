@@ -76,22 +76,22 @@
 
 <div class="flex">
   <div class="flexitem searchtab">Search</div>
-  <div class="flexitem" id="home"><%= link_to 'Home', home_index_path %></div>
-  <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb'%></div>
+  <div class="flexitem" id="home"><%= link_to 'Home', home_index_path, class: 'headerlinks'%></div>
+  <div class="flexitem"><%= link_to 'About Weexus', '/pages/aboutweexus.erb', class: 'headerlinks'%></div>
   <% if user_signed_in? %>
-  <div class="flexitem"><%= link_to 'Share your Story', new_post_path %></div>
-  <div class="flexitem"><%=link_to 'Edit your Profile', users_profile_path %></div>
+  <div class="flexitem"><%= link_to 'Share your Story', new_post_path, class: 'headerlinks' %></div>
+  <div class="flexitem"><%=link_to 'Edit your Profile', users_profile_path, class: 'headerlinks' %></div>
   <% end %>
-  <div class="flexitem"><%= link_to 'Our Experiences', posts_path %></div>
+  <div class="flexitem"><%= link_to 'Our Experiences', posts_path, class: 'headerlinks' %></div>
   <% if user_signed_in? %>
   <% if can? :update, Tag %>
-  <div class="flexitem"><%= link_to 'Tags', tags_path %></div>
+  <div class="flexitem"><%= link_to 'Tags', tags_path, class: 'headerlinks' %></div>
   <% end %>
   <% if can? :update, Exclusion %>
-  <div class="flexitem"><%= link_to 'Exclusions', exclusions_path %></div>
+  <div class="flexitem"><%= link_to 'Exclusions', exclusions_path, class: 'headerlinks' %></div>
   <% end %>
   <% if can? :manage, User %>
-  <div class="flexitem"><%= link_to 'Users', users_path %></div>
+  <div class="flexitem"><%= link_to 'Users', users_path, class: 'headerlinks' %></div>
   <% end %>
 </div>
 
