@@ -41,8 +41,7 @@
 
  body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background: white;
-  }
+}
 
 
 /* pushes footer down to bottom of page */
@@ -67,8 +66,8 @@
 /* logo styling */
 .logo {
   cursor: pointer;
-  margin-top: 5%;
-  margin-bottom: 3%;
+  margin-top: 2%;
+  margin-bottom: 1%;
   /*margin-right: 70%;
   width: 5%;
   height: 5%;*/
@@ -111,6 +110,7 @@
   border-top-color: #e6e6e6;
   margin-left: 2%;
   margin-right: 3%;
+  padding-bottom: 10px
 }
 
 
@@ -190,15 +190,10 @@
   margin-bottom: 1.5%;
   margin-top: 1%;
   margin-left: 1%;
-  color: #999999;
   white-space: nowrap;
-<<<<<<< HEAD
   color: #337ab7;
   cursor: pointer !important;
-
-
-=======
->>>>>>> 22478b0276ad77ede76ec3a70827a2db2f0baa6d
+  text-align: center;
 }
 
 /* sets burger menu to not appear in desktop */
@@ -219,6 +214,7 @@
   margin-top: -205;;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 15px;
 }
 
 /* styling for buttons in footer */
