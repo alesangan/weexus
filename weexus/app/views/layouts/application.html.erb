@@ -43,7 +43,7 @@
       <% end %>
     </div>
 
-    <div class="searchBox">
+    <div>
 
       <%= form_tag(posts_path, method: "get", id: "searchBox") do %>
               <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
@@ -68,7 +68,6 @@
             $('#searchContainer').click(function(){
               $('#searchBox').toggle();
             });
-            $('#searchBox').hide();
         });
     </script>
 
