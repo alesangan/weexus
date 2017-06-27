@@ -10,7 +10,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
+      <th><%= sortable "title","Title"%></th>
       <!-- <th>Content</th> -->
       <th>Tags</th>
       <th>Status</th>
@@ -47,4 +47,4 @@
 
 <%= link_to 'Back', posts_path %>
 <!-- renderer:BootstrapPagination::Rails -->
-<%= will_paginate @posts, inner_window: 1,outer_window: 0%>
+<%= will_paginate @posts,renderer:BootstrapPagination::Rails, inner_window: 1,outer_window: 0%>

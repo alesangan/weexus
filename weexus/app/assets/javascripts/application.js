@@ -16,4 +16,5 @@
 //= require_tree .
 //= require trix
 //= require jqcloud
+
 //= require bootstrap-sprockets

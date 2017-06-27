@@ -15,8 +15,9 @@ default: &default
   pool: 5
   username: weexus
   password: weexus
-  socket: /tmp/mysql.sock
-  # socket: /tmp/mysql.sock
+
+  socket: /var/run/mysqld/mysqld.sock
+#  socket: /tmp/mysql.sock
 
 development:
   <<: *default

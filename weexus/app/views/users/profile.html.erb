@@ -42,7 +42,7 @@
         <% if current_user.present? and current_user.voted_for? post %>
         <td><%= link_to dislike_post_path(post), method: :put do %>
           <!-- Unvote -->
-            <%=  icon('thumbs-o-down')%>
+            <%=  icon('thumbs-o-up',class: 'unvote')%>
           <%= post.get_upvotes.size %>
           <% end %>
         </td>
@@ -67,4 +67,4 @@
   </tbody>
 </table>
 <!-- renderer:BootstrapPagination::Rails -->
-<%= will_paginate @posts, inner_window: 1,outer_window: 0%>
+<%= will_paginate @posts,renderer:BootstrapPagination::Rails, inner_window: 1,outer_window: 0%>

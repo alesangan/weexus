@@ -3,7 +3,7 @@
 
 <h1 class="mytitle">Our Excluded Words</h1>
 </br>
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Words</th>
@@ -29,4 +29,4 @@
 
 <%= link_to 'New Exclusion', new_exclusion_path %>
 <!-- renderer:BootstrapPagination::Rails -->
-<%= will_paginate @posts, inner_window: 1,outer_window: 0%>
+<%= will_paginate @posts,renderer:BootstrapPagination::Rails, inner_window: 1,outer_window: 0%>
