@@ -45,14 +45,18 @@
         <% if current_user.present? and current_user.voted_for? post %>
         <td ><%= link_to dislike_post_path(post), method: :put do %>
         <!--  Unvote-->
-          <%=  icon('thumbs-o-up', class: 'unvote')%>
+
+         <%=  icon('thumbs-o-up',class: 'unvote')%>
+
           <%= post.get_upvotes.size %>
           <% end %>
         </td>
         <% else %>
         <td><%= link_to like_post_path(post), method: :put do %>
+          <%= icon('thumbs-o-up')%>
         <!--  Upvote-->
-          <%=  icon('thumbs-o-up')%>
+
+
           <%= post.get_upvotes.size  %>
 
 
@@ -61,7 +65,7 @@
         <% end %>
         <% if can? :update, Post %>
           <!-- <td><%= link_to 'Edit', edit_post_path(post) %></td> -->
-           <td><%= link_to icon('pencil-square-o'), edit_post_path(post) %></td>
+          <td><%= link_to icon('pencil-square-o'), edit_post_path(post) %></td>
         <% end %>
 
         <% if can? :delete, @post %>
