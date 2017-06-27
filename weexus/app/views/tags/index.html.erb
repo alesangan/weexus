@@ -1,6 +1,7 @@
+</br>
 <p id="notice"><%= notice %></p>
 
-<h1>Our Experience Tags</h1></br>
+<h1 class="mytitle">Our Experience Tags</h1></br>
 
 <br />
   <div id="tag_cloud"><span class='shadow'></span>
@@ -29,8 +30,11 @@
         <td><%= tag.name %></td>
         <td><%= tag.status %></td>
         <td><%= link_to 'Show all Tagged Posts', tag %></td>
-
         <td><%= link_to icon('pencil-square-o'), edit_tag_path(tag) %></td>
+
+<!--ALEXH CHANGE STATUS IN EDIT RATHER THAN DESTROY TAGS
+        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
 
       </tr>
     <% end %>
