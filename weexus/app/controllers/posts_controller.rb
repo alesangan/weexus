@@ -16,11 +16,11 @@ class PostsController < ApplicationController
   end
 
   def review
-    @posts = Post.where(status: 'Submitted').paginate(page: params[:page], per_page: 5)
+    @posts = Post.where(status: 'Submitted').order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 5)
   end
 
   def rejected
-    @posts = Post.where(status: 'Rejected').paginate(page: params[:page], per_page: 5)
+    @posts = Post.where(status: 'Rejected').order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 5)
   end
 
   # GET /posts/1
